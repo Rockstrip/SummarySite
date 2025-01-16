@@ -1,0 +1,30 @@
+/* Portfolio Section */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project {
+  text-align: center;
+  border: 1px solid #555;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #3a3a3a;
+}
+
+.project img {
+  width: 100%; /* Ширина равна ширине родительского контейнера */
+  aspect-ratio: 4 / 3; /* Делаем изображение квадратным */
+  object-fit: cover; /* Обрезаем изображение по центральной части */
+  border-radius: 10px;
+}
+
+.project h3 {
+  margin: 10px 0;
+}
+
+.project p {
+  font-size: 0.9rem;
+  color: #cccccc;
+}

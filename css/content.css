@@ -1,0 +1,17 @@
+main {
+  width: 80%;
+  max-width: 1000px;
+  margin-top: 20px;
+}
+
+.content {
+  display: none;
+  border: 2px solid #007acc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #2d2d2d;
+}
+
+.content.active {
+  display: block;
+}

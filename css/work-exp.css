@@ -1,0 +1,45 @@
+#work-experience {
+  margin-top: 0px;
+}
+
+.experience-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.experience-item {
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 10px;
+  padding: 0px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item h3 {
+  font-size: 1.4rem;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.experience-item p {
+  font-size: 1rem;
+  color: #cccccc;
+  margin: 5px 0;
+}
+
+.experience-item ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.experience-item ul li {
+  font-size: 0.9rem;
+  color: #dddddd;
+  margin-bottom: 5px;
+}
+
+.experience-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

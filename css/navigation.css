@@ -1,0 +1,33 @@
+/* Navigation */
+nav button {
+  position: relative;
+  background-color: #007acc00;
+  color: #ffffff;
+  border: 2px solid #007acc;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+nav button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -22px; 
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 2px;
+  height: 21px;
+  background-color: #007acc;
+}
+
+nav button:hover::after {
+  width: 2px;
+  height: 20px;
+  background-color: #007acc;
+}
+
+nav button.active {
+  background-color: #005f99;
+}
