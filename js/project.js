@@ -1,12 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetch('projects.json')
-    .then(response => response.json())
-    .then(projects => {
-        projects.forEach(project => {
-            if (!Array.isArray(project.screenshots)) {
-                console.error(`Missing screenshots array for project: ${project.title}`);
-            }
-        });
+    .then(response => response.json());
 
         const projectData = projects[0]; // Используем первый проект
 
