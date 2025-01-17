@@ -1,8 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetch('projects.json')
-        .then(response => response.json())
-        .then(projects => {
-            const projectData = projects[0]; // Пример: берем первый проект
+    .then(response => response.json())
+    .then(projects => {
+        projects.forEach(project => {
+            if (!Array.isArray(project.screenshots)) {
+                console.error(`Missing screenshots array for project: ${project.title}`);
+            }
+        });
+
+        const projectData = projects[0]; // Используем первый проект
+
+        // Убедись, что screenshots массив
+        if (!Array.isArray(projectData.screenshots)) {
+            projectData.screenshots = [];
+        }
 
             // Генерация списка изображений
             const screenshotCount = 4;  // Укажи максимальное количество изображений
