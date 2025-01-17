@@ -1,0 +1,25 @@
+[
+    {
+      "title": "Samurai Warlords",
+      "shortDescription": "Use your army to fight in different scenarios and subdue your enemies. Either fight against real players or play against AI.",
+      "releaseDate": "Dec 3, 2021",
+      "developer": "Artur Kashuba",
+      "publisher": "Samurai Warlords",
+      "tags": ["Unity 3D", "Multiplayer", "Android", "iOS"],
+      "detailedDescription": "Dive into the world of feudal Japan where samurais battle for honor and dominance. Samurai Warlords offers an immersive multiplayer experience.",
+      "screenshots": [],
+      "screenshotsExtension": "jpg"
+    },
+    {
+      "title": "Another Project",
+      "shortDescription": "Another project short description.",
+      "releaseDate": "Feb 20, 2022",
+      "developer": "Artur Kashuba",
+      "publisher": "Another Publisher",
+      "tags": ["Unity 3D", "Single Player", "PC"],
+      "detailedDescription": "Another project detailed description.",
+      "screenshots": [],
+      "screenshotsExtension": "webp"
+    }
+  ]
+  

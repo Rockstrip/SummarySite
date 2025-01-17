@@ -17,7 +17,7 @@
 }
 
 .skill-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2.5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -26,6 +26,7 @@
   height: 60px;
   margin-right: 15px; /* Отступ между иконкой и текстом */
   flex-shrink: 0; /* Иконка не сжимается */
+  image-rendering: pixelated;
 }
 
 .skill-details {

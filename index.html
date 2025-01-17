@@ -14,20 +14,29 @@
   <nav>
     <button onclick="showSection('about')" class="active">About Me</button>
     <button onclick="showSection('portfolio')">Portfolio</button>
+    <button onclick="showSection('contact')">Contact</button>
 </nav>
+
 
     <main>
       <section id="about" class="content active">
         <h2>About Me</h2>
-        <p>Hi, I'm Artur, a Unity developer with over 4 years of experience in the industry. I specialize in game development and have worked on a variety of projects, including multiplayer, mobile, and PC games. My goal is to create innovative and engaging gaming experiences.</p>
+        <p>I am a Unity developer with over 4 years of experience in the industry. I specialize in game development and have multiple published games for Desktop, Android, IOS, Xbox and WebGL</p>
     
         <h2>Skills</h2>
         <div class="skills-container">
           <div class="skill-card">
             <img src="Resources/Skills/mockup.svg" alt="Game Development Icon" class="skill-icon">
             <div class="skill-details">
-              <h3>UI/UX</h3>
-              <p>Design and Responsive Implementation</p>
+              <h3>Unity3D</h3>
+              <p>4 years experience</p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img src="Resources/Skills/mockup.svg" alt="Server Communication Icon" class="skill-icon">
+            <div class="skill-details">
+              <h3>C#</h3>
+              <p>6 years experience</p>
             </div>
           </div>
           <div class="skill-card">
@@ -52,14 +61,7 @@
             </div>
           </div>
           <div class="skill-card">
-            <img src="Resources/Skills/mockup.svg" alt="Server Communication Icon" class="skill-icon">
-            <div class="skill-details">
-              <h3>Server</h3>
-              <p>Rest API usage, solving sync problems</p>
-            </div>
-          </div>
-          <div class="skill-card">
-            <img src="Resources/Skills/mockup.svg" alt="VFX Icon" class="skill-icon">
+            <img src="Resources/Skills/vfx.png" alt="VFX Icon" class="skill-icon">
             <div class="skill-details">
               <h3>VFX</h3>
               <p>Particle System, Light Baking, Post-processing</p>
@@ -110,55 +112,76 @@
         </div>
         
           <h2>Work Experience</h2>
-          <div class="experience-container">
-            <div class="experience-item">
-              <h3>Unity Lead Developer</h3>
-              <p><strong>Company:</strong> Lumighost Ltd</p>
-              <p><strong>Duration:</strong> 03/2023 - 11/2024 (Remote)</p>
-              <ul>
-                <li>Team Leading: architecture creating, junior training, PR approving.</li>
-                <li>Collaborated with multidisciplinary teams including artists, designers, and QA testers.</li>
-                <li>Working with clients, technical consulting, project estimating.</li>
-              </ul>
+          <div class="timeline">
+            <!-- Item 1 -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-left">
+                  <h3>Lumighost Ltd</h3>
+                  <p>03/2023 - 11/2024</p>
+                </div>
+                <div class="timeline-right">
+                  <h3>Unity Lead Developer</h3>
+                  <ul>
+                    <li>Team Leading: architecture creating, junior training, PR approving.</li>
+                    <li>Collaborated with multidisciplinary teams including artists, designers, and QA testers.</li>
+                    <li>Working with clients, technical consulting, project estimating.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="experience-item">
-              <h3>Unity Developer</h3>
-              <p><strong>Company:</strong> Lumighost Ltd</p>
-              <p><strong>Duration:</strong> 01/2022 - 03/2023 (Remote)</p>
-              <ul>
-                <li>Developing and maintaining interactive games/apps using Unity3D and C#.</li>
-                <li>Implemented user interfaces, and visual effects.</li>
-                <li>Participated in regular code reviews to maintain code quality and best practices.</li>
-              </ul>
+            <!-- Item 2 -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-left">
+                  <h3>Lumighost Ltd</h3>
+                  <p>01/2022 - 03/2023</p>
+                </div>
+                <div class="timeline-right">
+                  <h3>Unity Developer</h3>
+                  <ul>
+                    <li>Developing and maintaining interactive games/apps using Unity3D and C#.</li>
+                    <li>Implemented user interfaces, and visual effects.</li>
+                    <li>Participated in regular code reviews to maintain code quality and best practices.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="experience-item">
-              <h3>Unity Developer</h3>
-              <p><strong>Company:</strong> Freelance</p>
-              <p><strong>Duration:</strong> 05/2021 - 01/2022 (Remote)</p>
-              <ul>
-                <li>«Top Rated» status and 100% Job Success.</li>
-                <li>Utilized C# and Unity frameworks to create engaging gameplay mechanics, UI/UX elements, and VR/AR integrations.</li>
-                <li>Collaborated with clients to define project scope, establish milestones, and deliver solutions that met or exceeded expectations.</li>
-              </ul>
+            <!-- Item 3 -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-left">
+                  <h3>Freelance</h3>
+                  <p>05/2021 - 01/2022</p>
+                </div>
+                <div class="timeline-right">
+                  <h3>Unity Developer</h3>
+                  <ul>
+                    <li>«Top Rated» status and 100% Job Success.</li>
+                    <li>Utilized C# and Unity frameworks to create engaging gameplay mechanics, UI/UX elements, and VR/AR integrations.</li>
+                    <li>Collaborated with clients to define project scope, establish milestones, and deliver solutions that met or exceeded expectations.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-        
-        <h2>Education</h2>
-        <div class="education-container">
-          <div class="education-item">
-            <h3>Software Engineering (Master)</h3>
-            <p>Taras Shevchenko National University of Kyiv</p>
-            <p>2021 - 2023</p>
-          </div>
-          <div class="education-item">
-            <h3>Software Engineering (Bachelor)</h3>
-            <p>Taras Shevchenko National University of Kyiv</p>
-            <p>2017 - 2021</p>
-          </div>
-        </div>
         
 
-        
+        <h2>Education</h2>
+        <div class="education"> 
+          <h3>Software Engineering (Master) </h3>
+          <p>Taras Shevchenko National University of Kyiv</p>
+          <p>09/2021 - 01/2023</p>
+        </div>
+        <div class="education"> 
+          <h3>Software Engineering (Bachelor) </h3>
+          <p>Taras Shevchenko National University of Kyiv</p>
+          <p>09/2017 - 05/2021</p>
+        </div>
+
         <h2>Skills Level</h2>
         <div class="skill-bar-container">
           <div class="skill-bar">
@@ -226,7 +249,43 @@
         </div>
           </div>
       </section>
-  
+
+      <section id="contact" class="content">
+        <h2>Contact</h2>
+        <p>If you want to collaborate or have any questions, feel free to contact me through any of the methods below:</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <img src="Resources/Icons/Social/phone.svg" alt="Phone Icon" class="contact-icon">
+                <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            </div>
+            <div class="contact-item">
+                <img src="Resources/Icons/Social/email.svg" alt="Email Icon" class="contact-icon">
+                <p><a href="mailto:artes5kgc@gmail.com">artes5kgc@gmail.com</a></p>
+            </div>
+            <div class="contact-item">
+                <img src="Resources/Icons/Social/github.svg" alt="GitHub Icon" class="contact-icon">
+                <p><a href="https://github.com/Rockstrip" target="_blank">Github</a></p>
+            </div>
+            <div class="contact-item">
+                <img src="Resources/Icons/Social/linkedIn.svg" alt="LinkedIn Icon" class="contact-icon">
+                <p><a href="https://www.linkedin.com/in/artur-kashuba-556b00192/" target="_blank">LinkedIn</a></p>
+            </div>
+            <div class="contact-item">
+                <img src="Resources/Icons/Social/skype.svg" alt="Skype Icon" class="contact-icon">
+                <p><a href="https://join.skype.com/invite/EgwpqlDLFxxX" target="_blank">Skype</a></p>
+            </div>
+            <div class="contact-item">
+                <img src="Resources/Icons/Social/telegram.svg" alt="Telegram Icon" class="contact-icon">
+                <p><a href="https://t.me/rockstrip" target="_blank">Telegram</a></p>
+            </div>
+            <div class="contact-item">
+                <img src="Resources/Icons/Social/upwork.svg" alt="Upwork Icon" class="contact-icon">
+                <p><a href="https://www.upwork.com/freelancers/~01c91a5d470285de31" target="_blank">Upwork</a></p>
+            </div>
+        </div>
+    </section>
+    
+
     </main>
     <script>
 function showSection(sectionId) {

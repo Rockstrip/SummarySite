@@ -1,0 +1,55 @@
+/* Стили для хедера */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Центрируем навигацию */
+  align-items: center;
+  padding: 20px;
+  background-color: #2a2a2a;
+}
+
+/* Стили для навигации */
+nav {
+  display: flex;
+  justify-content: center; /* Размещаем кнопки по центру */
+  gap: 40px;
+  width: 100%; /* Навигация растягивается на весь экран */
+}
+
+nav a {
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+button {
+  all: unset; /* Сбрасываем стандартные стили кнопок */
+  font-size: 1rem;
+  color: white; /* Цвет текста для неактивных кнопок */
+  cursor: pointer;
+  text-align: center;
+}
+
+button h1{
+  margin: 5px 0;
+}
+
+button.active {
+  color: #007BFF; /* Синий цвет для активной кнопки */
+  border-bottom: 2px solid #007BFF; /* Подчеркивание для активной кнопки */
+}
+
+button:hover {
+  color: #0056b3; /* Цвет текста при наведении */
+}
+
+button:focus {
+  outline: none; /* Убираем стандартное обводку при фокусе */
+}
+
+/* Стили для кнопки, которая не активна */
+button:not(.active) {
+  color: white; /* Белый цвет текста для неактивных кнопок */
+}
+
+button:not(.active):hover {
+  color: #ddd; /* Легкий серый цвет текста при наведении */
+}

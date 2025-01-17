@@ -1,0 +1,92 @@
+/* Top Section */
+.top-section {
+  display: flex;
+  gap: 15px;
+  background-color: #3a3a3a;
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+
+.carousel-container {
+  position: relative;
+  flex: 2;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  gap: 1px;
+  transition: transform 0.5s ease;
+}
+
+.carousel img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border-radius: 10px 0px 0px 0px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: space-between; /* Равномерное распределение элементов */
+  margin-top: 10px;
+}
+
+.thumbnails img {
+  flex-grow: 1; /* Элементы будут растягиваться, чтобы заполнить доступное пространство */
+  max-width: 150px; /* Ограничиваем максимальную ширину, чтобы они не становились слишком большими */
+  object-fit: cover; /* Сохраняем соотношение сторон при растягивании */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.thumbnails img.active {
+  border: 2px solid #007acc;
+}
+
+.project-info {
+  flex: 1;
+  border-radius: 10px;
+}
+
+.project-info .poster {
+  width: 100%;
+  aspect-ratio: 4 / 3; 
+  border-radius: 0px 10px 0px 0px;
+  margin: 0px;
+  object-fit: cover; 
+}
+
+.short-description p {
+  margin: 0px;
+}
+
+.details-section {
+  padding: 20px;
+}
+
+.details-section h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 10px;
+}

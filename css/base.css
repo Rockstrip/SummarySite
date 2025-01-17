@@ -1,7 +1,7 @@
 /* Base Styles */
 body {
   font-family: 'Consolas', 'Courier New', 'Lucida Console', Monaco, monospace;
-  background-color: #1e1e1e;
+  background-color: #2d2d2d;
   color: #ffffff;
   margin: 0;
   padding: 0;
@@ -21,9 +21,7 @@ h2 {
   text-align: center;
 }
 
-header {
-  background-color: #2d2d2d;
-  width: 100%;
-  padding: 10px 0;
-  text-align: center;
+p {
+  font-size: 1rem;
+  color: #cccccc;
 }
