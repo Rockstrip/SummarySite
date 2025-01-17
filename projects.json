@@ -1,5 +1,39 @@
 [
     {
+        "title": "Samurai Warlords",
+        "releaseDate": "2024",
+        "developer": "Artur Kashuba",
+        "publisher": "Samurai Warlords",
+        "tags": ["Unity3D", "C#", "Multiplayer"],
+        "shortDescription": "Classic 3D chess game, with the feature: players can use katana, which was created in the SSS app.",
+        "detailedDescription": "3D chess game with integration of katana created in the Samurai Swords Store app.",
+        "screenshotsExtension": "jpg",
+        "screenshots": []
+    },
+    {
+        "title": "Samurai Swords Store",
+        "releaseDate": "2023",
+        "developer": "Artur Kashuba",
+        "publisher": "Samurai Swords Store",
+        "tags": ["Unity3D", "C#", "API"],
+        "shortDescription": "The application was developed for a company engaged in the production of combat katanas. In the app, users can customize the configuration and order a katana.",
+        "detailedDescription": "Users can customize the configuration and order a katana based on their own designs.",
+        "screenshotsExtension": "jpg",
+        "screenshots": []
+    },
+    {
+        "title": "Haunted Houses",
+        "releaseDate": "2022",
+        "developer": "Artur Kashuba",
+        "publisher": "Lumighost Ltd.",
+        "tags": ["Unity3D", "C#", "API", "UI", "Enemy AI"],
+        "shortDescription": "Shooter with dungeon generation, unique to each match. Developed for Lumighost Ltd.",
+        "detailedDescription": "Implemented gameplay systems, AI behaviors, and custom shaders.",
+        "screenshotsExtension": "webp",
+        "screenshots": []
+    },
+
+    {
       "title": "NFTicket",
       "releaseDate": "2023",
       "developer": "Artur Kashuba",
@@ -22,39 +56,6 @@
       "screenshots": []
     },
     {
-      "title": "Samurai Swords Store",
-      "releaseDate": "2023",
-      "developer": "Artur Kashuba",
-      "publisher": "Samurai Swords Store",
-      "tags": ["Unity3D", "C#", "API"],
-      "shortDescription": "The application was developed for a company engaged in the production of combat katanas. In the app, users can customize the configuration and order a katana.",
-      "detailedDescription": "Users can customize the configuration and order a katana based on their own designs.",
-      "screenshotsExtension": "jpg",
-      "screenshots": []
-    },
-    {
-      "title": "Samurai Warlords",
-      "releaseDate": "2024",
-      "developer": "Artur Kashuba",
-      "publisher": "Samurai Warlords",
-      "tags": ["Unity3D", "C#", "Multiplayer"],
-      "shortDescription": "Classic 3D chess game, with the feature: players can use katana, which was created in the SSS app.",
-      "detailedDescription": "3D chess game with integration of katana created in the Samurai Swords Store app.",
-      "screenshotsExtension": "jpg",
-      "screenshots": []
-    },
-    {
-      "title": "Haunted Houses",
-      "releaseDate": "2022",
-      "developer": "Artur Kashuba",
-      "publisher": "Lumighost Ltd.",
-      "tags": ["Unity3D", "C#", "API", "UI", "Enemy AI"],
-      "shortDescription": "Shooter with dungeon generation, unique to each match. Developed for Lumighost Ltd.",
-      "detailedDescription": "Implemented gameplay systems, AI behaviors, and custom shaders.",
-      "screenshotsExtension": "webp",
-      "screenshots": []
-    },
-    {
       "title": "Heroes Auto Battle",
       "releaseDate": "2022",
       "developer": "Artur Kashuba",
@@ -65,6 +66,7 @@
       "screenshotsExtension": "jpg",
       "screenshots": []
     },
+
     {
       "title": "Beaver Lumberjack",
       "releaseDate": "2021",
@@ -87,6 +89,18 @@
       "screenshotsExtension": "jpg",
       "screenshots": []
     },
+    {
+        "title": "Jiggler",
+        "releaseDate": "2022",
+        "developer": "Artur Kashuba",
+        "publisher": "Artur Kashuba",
+        "tags": ["Unity3D", "C#", "UI", "VFX"],
+        "shortDescription": "Gnaw tree, build your dam and block the river.",
+        "detailedDescription": "Gnaw tree, build your dam and block the river.",
+        "screenshotsExtension": "webp",
+        "screenshots": []
+    },
+
     {
       "title": "Flappy Center",
       "releaseDate": "2021",
@@ -120,17 +134,7 @@
       "screenshotsExtension": "jpg",
       "screenshots": []
     },
-    {
-      "title": "Jiggler",
-      "releaseDate": "2022",
-      "developer": "Artur Kashuba",
-      "publisher": "Artur Kashuba",
-      "tags": ["Unity3D", "C#", "UI", "VFX"],
-      "shortDescription": "Gnaw tree, build your dam and block the river.",
-      "detailedDescription": "Gnaw tree, build your dam and block the river.",
-      "screenshotsExtension": "webp",
-      "screenshots": []
-    },
+
     {
       "title": "Klee Run",
       "releaseDate": "2022",
@@ -154,17 +158,6 @@
       "screenshots": []
     },
     {
-      "title": "Mazer Minotazer",
-      "releaseDate": "2021",
-      "developer": "Artur Kashuba",
-      "publisher": "Artur Kashuba",
-      "tags": ["Unity3D", "C#", "VFX", "Procedural Generator"],
-      "shortDescription": "Gnaw tree, build your dam and block the river.",
-      "detailedDescription": "Gnaw tree, build your dam and block the river.",
-      "screenshotsExtension": "jpg",
-      "screenshots": []
-    },
-    {
         "title": "Shio",
         "releaseDate": "2024",
         "developer": "Artur Kashuba",
@@ -174,6 +167,18 @@
         "detailedDescription": "Gnaw tree, build your dam and block the river.",
         "screenshotsExtension": "webp",
         "screenshots": []
-      }
+    },
+
+    {
+        "title": "Mazer Minotazer",
+        "releaseDate": "2021",
+        "developer": "Artur Kashuba",
+        "publisher": "Artur Kashuba",
+        "tags": ["Unity3D", "C#", "VFX", "Procedural Generator"],
+        "shortDescription": "Gnaw tree, build your dam and block the river.",
+        "detailedDescription": "Gnaw tree, build your dam and block the river.",
+        "screenshotsExtension": "jpg",
+        "screenshots": []
+    }
   ]
   
