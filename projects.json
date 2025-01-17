@@ -34,6 +34,17 @@
     },
 
     {
+        "title": "RudderStack",
+        "releaseDate": "2023",
+        "developer": "Artur Kashuba",
+        "publisher": "RudderStack",
+        "tags": ["Unity3D", "C#", "API", "SDK"],
+        "shortDescription": "RudderStack is a company that provides analytics SDK for most popular platforms. 40,000+ sites and apps run RudderStack. I developed an SDK for Unity.",
+        "detailedDescription": "Developed SDK for Unity for RudderStack analytics.",
+        "screenshotsExtension": "webp",
+        "screenshots": []
+    },
+    {
       "title": "NFTicket",
       "releaseDate": "2023",
       "developer": "Artur Kashuba",
@@ -42,17 +53,6 @@
       "shortDescription": "iTicket is a ticketing company, and I created a mobile app for them. Lots of work on the UI and runtime loading objects.",
       "detailedDescription": "Developed dynamic (in runtime) loading .gltf models, using API for dynamic loading posters and tickets.",
       "screenshotsExtension": "jpg",
-      "screenshots": []
-    },
-    {
-      "title": "RudderStack",
-      "releaseDate": "2023",
-      "developer": "Artur Kashuba",
-      "publisher": "RudderStack",
-      "tags": ["Unity3D", "C#", "API", "SDK"],
-      "shortDescription": "RudderStack is a company that provides analytics SDK for most popular platforms. 40,000+ sites and apps run RudderStack. I developed an SDK for Unity.",
-      "detailedDescription": "Developed SDK for Unity for RudderStack analytics.",
-      "screenshotsExtension": "webp",
       "screenshots": []
     },
     {
