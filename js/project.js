@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Функция для извлечения параметров из URL
+    const getQueryParam = (param) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    };
+
+    // Получаем параметр name из URL
+    const projectName = getQueryParam("name");
+
     fetch('projects.json')
         .then(response => {
             if (!response.ok) {
@@ -11,9 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error("Projects data is empty or invalid.");
             }
 
-            const projectData = projects[0];
+            // Ищем проект с соответствующим названием
+            const projectData = projects.find(project => project.title === projectName);
+
             if (!projectData) {
-                console.error("No project data available.");
+                console.error(`Project with name "${projectName}" not found.`);
+                document.querySelector(".short-description").innerHTML = `
+                    <p>Project not found. Please check the URL or try again later.</p>
+                `;
                 return;
             }
 
