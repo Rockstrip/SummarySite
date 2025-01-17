@@ -22,7 +22,7 @@
       "screenshots": []
     },
     {
-      "title": "Samurai Swords Store (SSS)",
+      "title": "Samurai Swords Store",
       "releaseDate": "2023",
       "developer": "Artur Kashuba",
       "publisher": "Samurai Swords Store",
@@ -62,7 +62,7 @@
       "tags": ["Unity3D", "C#", "UI", "VFX", "Ads"],
       "shortDescription": "Autochess with more than 50 characters, including shop and in-app purchases.",
       "detailedDescription": "Developed autochess game with over 50 characters, including in-app purchases.",
-      "screenshotsExtension": "webp",
+      "screenshotsExtension": "jpg",
       "screenshots": []
     },
     {
