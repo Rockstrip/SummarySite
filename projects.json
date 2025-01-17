@@ -7,7 +7,8 @@
       "tags": ["Unity3D", "C#", "API", "UI", "QR scan", "NFT"],
       "shortDescription": "iTicket is a ticketing company, and I created a mobile app for them. Lots of work on the UI and runtime loading objects.",
       "detailedDescription": "Developed dynamic (in runtime) loading .gltf models, using API for dynamic loading posters and tickets.",
-      "screenshotsExtension": "jpg"
+      "screenshotsExtension": "jpg",
+      "screenshots": []
     },
     {
       "title": "RudderStack",
@@ -17,7 +18,8 @@
       "tags": ["Unity3D", "C#", "API", "SDK"],
       "shortDescription": "RudderStack is a company that provides analytics SDK for most popular platforms. 40,000+ sites and apps run RudderStack. I developed an SDK for Unity.",
       "detailedDescription": "Developed SDK for Unity for RudderStack analytics.",
-      "screenshotsExtension": "webp"
+      "screenshotsExtension": "webp",
+      "screenshots": []
     },
     {
       "title": "Samurai Swords Store (SSS)",
@@ -27,7 +29,8 @@
       "tags": ["Unity3D", "C#", "API"],
       "shortDescription": "The application was developed for a company engaged in the production of combat katanas. In the app, users can customize the configuration and order a katana.",
       "detailedDescription": "Users can customize the configuration and order a katana based on their own designs.",
-      "screenshotsExtension": "jpg"
+      "screenshotsExtension": "jpg",
+      "screenshots": []
     },
     {
       "title": "Samurai Warlords",
@@ -37,7 +40,8 @@
       "tags": ["Unity3D", "C#", "Multiplayer"],
       "shortDescription": "Classic 3D chess game, with the feature: players can use katana, which was created in the SSS app.",
       "detailedDescription": "3D chess game with integration of katana created in the Samurai Swords Store app.",
-      "screenshotsExtension": "jpg"
+      "screenshotsExtension": "jpg",
+      "screenshots": []
     },
     {
       "title": "Haunted Houses",
@@ -47,7 +51,8 @@
       "tags": ["Unity3D", "C#", "API", "UI", "Enemy AI"],
       "shortDescription": "Shooter with dungeon generation, unique to each match. Developed for Lumighost Ltd.",
       "detailedDescription": "Implemented gameplay systems, AI behaviors, and custom shaders.",
-      "screenshotsExtension": "webp"
+      "screenshotsExtension": "webp",
+      "screenshots": []
     },
     {
       "title": "Heroes Auto Battle",
@@ -57,7 +62,8 @@
       "tags": ["Unity3D", "C#", "UI", "VFX", "Ads"],
       "shortDescription": "Autochess with more than 50 characters, including shop and in-app purchases.",
       "detailedDescription": "Developed autochess game with over 50 characters, including in-app purchases.",
-      "screenshotsExtension": "webp"
+      "screenshotsExtension": "webp",
+      "screenshots": []
     },
     {
       "title": "Beaver Lumberjack",
@@ -67,7 +73,8 @@
       "tags": ["Unity3D", "C#", "UI", "Ads"],
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Developed the Beaver Lumberjack game, where players block rivers by building dams.",
-      "screenshotsExtension": "jpg"
+      "screenshotsExtension": "jpg",
+      "screenshots": []
     },
     {
       "title": "DeltaP3",
@@ -77,7 +84,8 @@
       "tags": ["Unity3D", "C#", "UI"],
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Gnaw tree, build your dam and block the river.",
-      "screenshotsExtension": "jpg"
+      "screenshotsExtension": "jpg",
+      "screenshots": []
     },
     {
       "title": "Flappy Center",
@@ -87,7 +95,8 @@
       "tags": ["Unity3D", "C#", "UI", "Ads"],
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Gnaw tree, build your dam and block the river.",
-      "screenshotsExtension": "jpg"
+      "screenshotsExtension": "jpg",
+      "screenshots": []
     },
     {
       "title": "Honey Cut",
@@ -97,7 +106,8 @@
       "tags": ["Unity3D", "C#", "VFX", "Realtime Mesh Modify"],
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Gnaw tree, build your dam and block the river.",
-      "screenshotsExtension": "jpg"
+      "screenshotsExtension": "jpg",
+      "screenshots": []
     },
     {
       "title": "iBall",
@@ -107,7 +117,8 @@
       "tags": ["Unity3D", "C#", "UI", "VFX", "Multiplayer"],
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Gnaw tree, build your dam and block the river.",
-      "screenshotsExtension": "jpg"
+      "screenshotsExtension": "jpg",
+      "screenshots": []
     },
     {
       "title": "Jiggler",
@@ -117,7 +128,8 @@
       "tags": ["Unity3D", "C#", "UI", "VFX"],
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Gnaw tree, build your dam and block the river.",
-      "screenshotsExtension": "webp"
+      "screenshotsExtension": "webp",
+      "screenshots": []
     },
     {
       "title": "Klee Run",
@@ -127,7 +139,8 @@
       "tags": ["Unity3D", "C#", "UI", "VFX", "NFT"],
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Gnaw tree, build your dam and block the river.",
-      "screenshotsExtension": "jpg"
+      "screenshotsExtension": "jpg",
+      "screenshots": []
     },
     {
       "title": "Magic Swamp",
@@ -137,7 +150,8 @@
       "tags": ["Unity3D", "C#", "UI", "VFX"],
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Gnaw tree, build your dam and block the river.",
-      "screenshotsExtension": "webp"
+      "screenshotsExtension": "webp",
+      "screenshots": []
     },
     {
       "title": "Mazer Minotazer",
@@ -147,7 +161,8 @@
       "tags": ["Unity3D", "C#", "VFX", "Procedural Generator"],
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Gnaw tree, build your dam and block the river.",
-      "screenshotsExtension": "jpg"
+      "screenshotsExtension": "jpg",
+      "screenshots": []
     },
     {
         "title": "Shio",
@@ -157,7 +172,8 @@
         "tags": ["Unity3D", "C#", "VFX"],
         "shortDescription": "Gnaw tree, build your dam and block the river.",
         "detailedDescription": "Gnaw tree, build your dam and block the river.",
-        "screenshotsExtension": "webp"
+        "screenshotsExtension": "webp",
+        "screenshots": []
       }
   ]
   
