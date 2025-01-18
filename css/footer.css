@@ -46,26 +46,8 @@ footer {
     margin-bottom: 5px;
 }
 
-.footer-links ul li a {
-    color: #007acc;
-    text-decoration: none;
-}
-
-.footer-links ul li a:hover {
-    text-decoration: underline;
-}
-
 .footer-contact p {
     margin: 5px 0;
-}
-
-.footer-contact a {
-    color: #007acc;
-    text-decoration: none;
-}
-
-.footer-contact a:hover {
-    text-decoration: underline;
 }
 
 .social-links {
@@ -74,7 +56,6 @@ footer {
 
 .social-links a {
     margin-right: 15px;
-    color: #007acc;
     text-decoration: none;
 }
 

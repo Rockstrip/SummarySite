@@ -33,12 +33,12 @@ button h1{
 }
 
 button.active {
-  color: #007BFF; /* Синий цвет для активной кнопки */
-  border-bottom: 2px solid #007BFF; /* Подчеркивание для активной кнопки */
+  color: gold; /* Синий цвет для активной кнопки */
+  border-bottom: 2px solid gold; /* Подчеркивание для активной кнопки */
 }
 
 button:hover {
-  color: #0056b3; /* Цвет текста при наведении */
+  color: #dab900;
 }
 
 button:focus {
