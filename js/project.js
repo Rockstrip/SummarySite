@@ -41,7 +41,21 @@ document.addEventListener("DOMContentLoaded", () => {
             const screenshotBasePath = `Resources/Portfolio/${projectData.title}/`;
 
             for (let i = 1; i <= screenshotCount; i++) {
-                projectData.screenshots.push(`${screenshotBasePath}${i}.${projectData.screenshotsExtension}`);
+                const filePath = `${screenshotBasePath}${i}.${projectData.screenshotsExtension}`;
+                
+                // Проверяем наличие файла
+                const img = new Image();
+                img.src = filePath;
+                
+                img.onload = () => {
+                    // Если файл существует
+                    projectData.screenshots.push(filePath);
+                };
+            
+                img.onerror = () => {
+                    // Если файл не существует
+                    projectData.screenshots.push("Resources/black.webp");
+                };
             }
 
             // Заполнение информации о проекте
