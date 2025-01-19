@@ -9,6 +9,10 @@ footer {
 
 .footer-content {
     width: 80%;
+    max-width: 1000px;
+    margin-top: 20px;
+    padding: 0;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
