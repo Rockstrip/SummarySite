@@ -19,11 +19,25 @@
   transition: transform 0.5s ease;
 }
 
-.carousel img {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  border-radius: 10px 0px 0px 0px;
+/* Для изображений в карусели и миниатюр */
+.carousel img, .thumbnails img {
+  object-fit: cover; /* Позволяет изображениям занимать всю область с сохранением пропорций */
+  background-color: #000; /* Чёрный фон */
+  width: 100%; /* Заполнение по ширине контейнера */
+  height: 100%; /* Заполнение по высоте контейнера */
+  display: block; /* Убирает пустые промежутки вокруг изображений */
+}
+
+/* Для контейнера карусели и миниатюр */
+.carousel-container, .carousel, .thumbnails {
+  position: relative;
+}
+
+/* Для миниатюр (если они фиксированного размера) */
+.thumbnails img {
+  width: 100px; /* Пример ширины для миниатюр */
+  height: 100px; /* Пример высоты для миниатюр */
+  object-fit: cover; /* Сохраняет пропорции и добавляет чёрные полосы */
 }
 
 .carousel-btn {
@@ -48,20 +62,20 @@
 
 .thumbnails {
   display: flex;
-  justify-content: space-between; /* Равномерное распределение элементов */
+  justify-content: space-between;
   margin-top: 10px;
 }
 
 .thumbnails img {
-  flex-grow: 1; /* Элементы будут растягиваться, чтобы заполнить доступное пространство */
-  max-width: 150px; /* Ограничиваем максимальную ширину, чтобы они не становились слишком большими */
-  object-fit: cover; /* Сохраняем соотношение сторон при растягивании */
+  flex-grow: 1;
+  max-width: 150px;
+  object-fit: cover;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .thumbnails img.active {
-  border: 2px solid #007acc;
+  border: 2px solid gold;
 }
 
 .project-info {
