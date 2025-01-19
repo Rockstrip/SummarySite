@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 projectLink.appendChild(projectImg);
                 projectLink.appendChild(projectTitle);
-                projectLink.appendChild(projectTags);
                 projectDiv.appendChild(projectLink);
                 portfolioGrid.appendChild(projectDiv);
             });
