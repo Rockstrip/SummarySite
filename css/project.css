@@ -21,9 +21,9 @@
 
 .carousel img {
   width: 100%;
-  object-fit: contain;
   border-radius: 10px;
   border-radius: 10px 0px 0px 0px;
+  object-fit: contain;
   aspect-ratio: 16/9;
 }
 
@@ -55,8 +55,9 @@
 
 .thumbnails img {
   flex-grow: 1; /* Элементы будут растягиваться, чтобы заполнить доступное пространство */
-  max-width: 150px; /* Ограничиваем максимальную ширину, чтобы они не становились слишком большими */
-  object-fit: cover; /* Сохраняем соотношение сторон при растягивании */
+  width: 150px; /* Ограничиваем максимальную ширину, чтобы они не становились слишком большими */
+  object-fit: contain;
+  aspect-ratio: 16/9;
   border-radius: 5px;
   cursor: pointer;
 }
