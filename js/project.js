@@ -42,23 +42,33 @@ document.addEventListener("DOMContentLoaded", () => {
             
             for (let i = 1; i <= screenshotCount; i++) {
                 const filePath = `${screenshotBasePath}${i}.${projectData.screenshotsExtension}`;
+                console.log(`Проверяем файл: ${filePath}`); // Лог пути файла
                 
                 // Используем fetch для проверки наличия файла
                 fetch(filePath, { method: "HEAD" })
                     .then(response => {
+                        console.log(`Ответ сервера для ${filePath}:`, response.status, response.statusText);
+                        
                         if (response.ok) {
                             // Файл существует
                             projectData.screenshots.push(filePath);
+                            console.log(`Файл найден: ${filePath}`);
                         } else {
                             // Файл не существует
-                            projectData.screenshots.push("Resources/black.webp");
+                            const fallbackPath = "Resources/black.webp";
+                            projectData.screenshots.push(fallbackPath);
+                            console.log(`Файл не найден. Используем черную картинку: ${fallbackPath}`);
                         }
                     })
-                    .catch(() => {
+                    .catch(error => {
                         // В случае ошибки запроса
-                        projectData.screenshots.push("Resources/black.webp");
+                        const fallbackPath = "Resources/black.webp";
+                        projectData.screenshots.push(fallbackPath);
+                        console.error(`Ошибка при запросе ${filePath}:`, error);
+                        console.log(`Используем черную картинку: ${fallbackPath}`);
                     });
             }
+            
 
             // Заполнение информации о проекте
             const poster = document.querySelector(".poster");
