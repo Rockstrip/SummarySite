@@ -25,6 +25,7 @@
   border-radius: 10px 0px 0px 0px;
   object-fit: contain;
   aspect-ratio: 16/9;
+  background-color: #222222;
 }
 
 .carousel-btn {
@@ -51,6 +52,7 @@
   display: flex;
   justify-content: space-between; /* Равномерное распределение элементов */
   margin-top: 10px;
+  gap: 10px;
 }
 
 .thumbnails img {
@@ -60,6 +62,7 @@
   aspect-ratio: 16/9;
   border-radius: 5px;
   cursor: pointer;
+  background-color: #222222;
 }
 
 .thumbnails img.active {
