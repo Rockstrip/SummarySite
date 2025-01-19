@@ -39,23 +39,25 @@ document.addEventListener("DOMContentLoaded", () => {
             // Генерация списка изображений
             const screenshotCount = 4;
             const screenshotBasePath = `Resources/Portfolio/${projectData.title}/`;
-
+            
             for (let i = 1; i <= screenshotCount; i++) {
                 const filePath = `${screenshotBasePath}${i}.${projectData.screenshotsExtension}`;
                 
-                // Проверяем наличие файла
-                const img = new Image();
-                img.src = filePath;
-                
-                img.onload = () => {
-                    // Если файл существует
-                    projectData.screenshots.push(filePath);
-                };
-            
-                img.onerror = () => {
-                    // Если файл не существует
-                    projectData.screenshots.push("Resources/black.webp");
-                };
+                // Используем fetch для проверки наличия файла
+                fetch(filePath, { method: "HEAD" })
+                    .then(response => {
+                        if (response.ok) {
+                            // Файл существует
+                            projectData.screenshots.push(filePath);
+                        } else {
+                            // Файл не существует
+                            projectData.screenshots.push("Resources/black.webp");
+                        }
+                    })
+                    .catch(() => {
+                        // В случае ошибки запроса
+                        projectData.screenshots.push("Resources/black.webp");
+                    });
             }
 
             // Заполнение информации о проекте
