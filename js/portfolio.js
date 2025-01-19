@@ -28,9 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const projectTitle = document.createElement("h3");
                 projectTitle.textContent = project.title;
 
-                const projectTags = document.createElement("p");
-                projectTags.textContent = `Tags: ${project.tags.join(", ")}`;
-
                 projectLink.appendChild(projectImg);
                 projectLink.appendChild(projectTitle);
                 projectLink.appendChild(projectTags);
