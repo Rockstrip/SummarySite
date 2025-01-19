@@ -81,9 +81,12 @@
   margin: 0px;
   object-fit: cover; 
 }
-
-.short-description p {
-  margin: 0px;
+.short-description {
+  display: flex;
+  flex-direction: column; /* Вертикальное размещение содержимого */
+  justify-content: flex-end; /* Содержимое размещается внизу контейнера */
+  height: 46.5%; /* Полная высота контейнера */
+  position: relative; /* Для контроля внутренних элементов */
 }
 
 .details-section {

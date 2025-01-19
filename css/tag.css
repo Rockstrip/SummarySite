@@ -1,19 +1,21 @@
 /* Контейнер для тегов */
 .tags-container {
   display: flex;
-  flex-wrap: wrap; /* Позволяет переносить теги на новую строку */
+  flex-wrap: wrap-reverse; /* Перенос строк: снизу вверх */
+  flex-direction:row;
   gap: 8px; /* Расстояние между тегами */
   margin-top: 16px; /* Отступ сверху от описания */
+  margin-top: auto; /* "Прилипает" контейнер к нижнему краю */
 }
 
 /* Стили для каждого тега */
 .tag {
   display: inline-block;
   padding: 8px 12px; /* Внутренние отступы */
-  background-color: #f0f0f0; /* Фон тега */
+  background-color: rgb(204, 174, 2); /* Фон тега */
   border-radius: 12px; /* Закругленные края */
   font-size: 14px; /* Размер шрифта */
-  color: #333; /* Цвет текста */
+  color: black; /* Цвет текста */
   text-align: center;
   cursor: pointer; /* Указывает, что элемент интерактивный */
   transition: background-color 0.3s, transform 0.2s; /* Эффект при наведении */
@@ -21,7 +23,7 @@
 
 /* Эффект при наведении на тег */
 .tag:hover {
-  background-color: #d6e4ff; /* Светло-голубой цвет при наведении */
+  background-color: gold; /* Светло-голубой цвет при наведении */
   transform: scale(1.05); /* Небольшое увеличение */
-  color: #0047ab; /* Цвет текста при наведении */
+  color: black; /* Цвет текста при наведении */
 }
