@@ -1,109 +1,67 @@
-/* Top Section */
-.top-section {
-  display: flex;
-  gap: 15px;
-  background-color: #3a3a3a;
-  border-radius: 10px;
-  padding-bottom: 10px;
-}
-
-.carousel-container {
-  position: relative;
-  flex: 2;
-  overflow: hidden;
-}
-
-.carousel {
-  display: flex;
-  gap: 1px;
-  transition: transform 0.5s ease;
-}
-
-/* Для изображений в карусели и миниатюр */
-/* Основное изображение в карусели */
-.carousel img, .thumbnails img {
-  object-fit: cover; /* Сохраняет пропорции */
-  background-color: #000; /* Чёрный фон */
+/* Image Container Styles for 16:9 ratio */
+.image-container {
   width: 100%; /* Заполнение по ширине */
-  height: auto; /* Высота зависит от ширины */
-  aspect-ratio: 16 / 9; /* Сохраняет пропорции 16:9 */
-  display: block; /* Убирает промежутки */
-}
-
-
-/* Для контейнера карусели и миниатюр */
-.carousel-container, .carousel, .thumbnails {
+  height: 0;
+  padding-bottom: 56.25%; /* Соотношение 16:9 (9/16 = 56.25%) */
+  background-color: #000; /* Черный фон */
   position: relative;
+  overflow: hidden; /* Скрывает лишнюю часть изображения, если оно больше контейнера */
 }
 
-/* Для миниатюр (если они фиксированного размера) */
-.thumbnails img {
-  width: 100px; /* Пример ширины для миниатюр */
-  height: 100px; /* Пример высоты для миниатюр */
-  object-fit: cover; /* Сохраняет пропорции и добавляет чёрные полосы */
-}
-
-.carousel-btn {
+.image-container img {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Сохраняет пропорции изображения и обрезает лишнее */
 }
 
-.prev-btn {
-  left: 10px;
-}
-
-.next-btn {
-  right: 10px;
-}
-
+/* Thumbnails Styles */
 .thumbnails {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
   margin-top: 10px;
 }
 
 .thumbnails img {
-  flex-grow: 1;
-  max-width: 150px;
+  width: 100px; /* Фиксированная ширина для миниатюр */
+  height: 56.25px; /* Высота для 16:9 */
+  object-fit: cover; /* Сохраняет пропорции и обрезает лишнее */
+  background-color: #000; /* Черный фон, если изображений нет */
+}
+
+/* Carousel Styles */
+.carousel-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 80%;
+  position: relative;
+}
+
+.carousel img {
+  width: 100%;
   object-fit: cover;
-  border-radius: 5px;
+  background-color: #000; /* Черный фон, если изображение отсутствует */
+}
+
+.carousel-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 2rem;
+  border: none;
+  padding: 10px;
   cursor: pointer;
 }
 
-.thumbnails img.active {
-  border: 2px solid gold;
-}
-
-.project-info {
-  flex: 1;
-  border-radius: 10px;
-}
-
-.project-info .poster {
-  width: 100%;
-  aspect-ratio: 4 / 3; 
-  border-radius: 0px 10px 0px 0px;
-  margin: 0px;
-  object-fit: cover; 
-}
-
-.short-description p {
-  margin: 0px;
-}
-
-.details-section {
-  padding: 20px;
-}
-
-.details-section h2 {
-  font-size: 1.5rem;
-  color: #fff;
-  margin-bottom: 10px;
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }

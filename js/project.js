@@ -87,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     thumbnails.appendChild(thumb);
                 });
 
-
                 let currentIndex = 0;
 
                 const setCarouselImage = (index) => {
