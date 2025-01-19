@@ -1,4 +1,5 @@
-/* Contact Container */
+@import url('../style.css');
+
 .contact-container {
   display: flex;
   justify-content: space-between;

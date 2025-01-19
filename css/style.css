@@ -1,11 +1,43 @@
-@import url('base.css');
-@import url('contact.css');
-@import url('education.css');
-@import url('footer.css');
-@import url('name.css');
 @import url('header.css');
-@import url('portfolio.css');
-@import url('project.css');
-@import url('skill-card.css');
-@import url('tag.css');
-@import url('timeline.css');
+@import url('footer.css');
+
+body {
+  font-family: 'Consolas', 'Courier New', 'Lucida Console', Monaco, monospace;
+  background-color: #2d2d2d;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  width: 80%;
+  max-width: 1000px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+a {
+  color: #dab900;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffd700;
+}

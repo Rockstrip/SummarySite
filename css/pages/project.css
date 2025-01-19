@@ -1,3 +1,6 @@
+@import url('../style.css');
+@import url('../elements/tag.css');
+
 /* Top Section */
 .top-section {
   display: flex;
@@ -87,9 +90,6 @@
   justify-content: flex-end; /* Содержимое размещается внизу контейнера */
   height: 46.5%; /* Полная высота контейнера */
   position: relative; /* Для контроля внутренних элементов */
-}
-
-.details-section {
 }
 
 .details-section h2 {

@@ -1,0 +1,26 @@
+@import url('../style.css');
+@import url('../elements/skill-card.css');
+@import url('../elements/timeline.css');
+
+.main-title {
+  font-size: 60px;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #cccccc;
+}
+
+.education h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.education p {
+  font-size: 1rem;
+  color: #cccccc;
+  margin: 0px 0px;
+}
