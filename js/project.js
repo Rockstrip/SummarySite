@@ -99,12 +99,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (shortDescription) {
                 shortDescription.innerHTML = `
                     <p>${projectData.shortDescription}</p>
-                    <p><strong>Release Date:</strong> ${projectData.releaseDate}</p>
-                    <p><strong>Developer:</strong> ${projectData.developer}</p>
-                    <p><strong>Publisher:</strong> ${projectData.publisher}</p>
-                    <p>${projectData.tags.join(", ")}</p>
+                    <div class="tags-container">
+                        ${projectData.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
+                    </div>
                 `;
             }
+            
 
             const detailedDescription = document.querySelector(".detailed-description");
             if (detailedDescription) {
