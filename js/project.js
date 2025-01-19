@@ -71,18 +71,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const thumbnails = document.querySelector(".thumbnails");
 
             if (carousel && thumbnails) {
-                // Заполнение карусели и миниатюр
                 projectData.screenshots.forEach((src, index) => {
                     const img = document.createElement("img");
                     img.src = src;
                     img.alt = `Screenshot ${index + 1}`;
-                    img.classList.add('carousel-img'); // Добавляем класс для стилизации
                     carousel.appendChild(img);
 
                     const thumb = document.createElement("img");
                     thumb.src = src;
                     thumb.alt = `Thumbnail ${index + 1}`;
-                    thumb.classList.add('thumbnail-img'); // Добавляем класс для стилизации
                     thumb.addEventListener("click", () => setCarouselImage(index));
                     thumbnails.appendChild(thumb);
                 });
