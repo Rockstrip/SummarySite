@@ -6,7 +6,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 main {
@@ -34,9 +33,9 @@ p {
 
 a {
   color: #dab900;
-  text-decoration: none; /* Убирает подчёркивание (по желанию) */
+  text-decoration: none;
 }
 
 a:hover {
-  color: #ffd700; /* Более яркий оттенок при наведении (по желанию) */
+  color: #ffd700;
 }

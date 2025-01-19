@@ -1,8 +1,8 @@
 .education h3 {
   font-size: 1.2rem;
   color: #ffffff;
-  margin-top: 20px; /* Уменьшено расстояние сверху */
-  margin-bottom: 0px; /* Уменьшено расстояние сверху */
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 .education p {

@@ -19,7 +19,7 @@ form {
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Пространство между элементами формы */
+  gap: 15px;
 }
 
 /* Form Styles */
@@ -40,7 +40,7 @@ form input {
 }
 
 form textarea {
-  flex-grow: 1; /* Позволяет текстовой области занимать всё оставшееся пространство */
+  flex-grow: 1;
   width: 100%;
   padding: 10px;
   border: 1px solid #555;
@@ -49,7 +49,7 @@ form textarea {
   color: #ffffff;
   font-size: 1rem;
   box-sizing: border-box;
-  resize: none; /* Убирает возможность изменения размера (по желанию) */
+  resize: none;
 }
 
 form button {
@@ -62,7 +62,7 @@ form button {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  align-self: flex-start; /* Размещает кнопку по левому краю */
+  align-self: flex-start;
 }
 
 form button:hover {
