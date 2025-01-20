@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const fetchImage = (filePath) =>
         fetch(filePath, { method: "HEAD" })
-            .then((response) => (response.ok ? filePath : "Resources/black.webp"))
-            .catch(() => "Resources/black.webp");
+            .then((response) => (response.ok ? filePath : null))
+            .catch(() => null);
 
     const updateCarousel = (carousel, thumbnails, screenshots) => {
         screenshots.forEach((src, index) => {
@@ -80,23 +80,31 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const screenshotBasePath = `Resources/Portfolio/${projectData.title}/`;
-            const screenshotCount = 4;
+            let screenshotCount = 0;
+            const screenshots = [];
 
-            // Параллельная загрузка изображений
-            Promise.all(
-                Array.from({ length: screenshotCount }, (_, i) =>
-                    fetchImage(`${screenshotBasePath}${i + 1}.${projectData.screenshotsExtension}`)
-                )
-            ).then((screenshots) => {
-                const carousel = document.querySelector(".carousel");
-                const thumbnails = document.querySelector(".thumbnails");
+            // Динамическая загрузка изображений до тех пор, пока не будет найдено
+            const loadImages = () => {
+                fetchImage(`${screenshotBasePath}${screenshotCount + 1}.${projectData.screenshotsExtension}`).then((imageSrc) => {
+                    if (imageSrc) {
+                        screenshots.push(imageSrc);
+                        screenshotCount++;
+                        loadImages(); // Продолжаем загружать следующие изображения
+                    } else {
+                        // Все изображения загружены, обновляем карусель и миниатюры
+                        const carousel = document.querySelector(".carousel");
+                        const thumbnails = document.querySelector(".thumbnails");
 
-                if (carousel && thumbnails) {
-                    updateCarousel(carousel, thumbnails, screenshots);
-                } else {
-                    console.error("Carousel or thumbnails container not found.");
-                }
-            });
+                        if (carousel && thumbnails) {
+                            updateCarousel(carousel, thumbnails, screenshots);
+                        } else {
+                            console.error("Carousel or thumbnails container not found.");
+                        }
+                    }
+                });
+            };
+
+            loadImages();
 
             // Обновляем остальные данные проекта
             updateProjectDetails(projectData, screenshotBasePath);

@@ -18,13 +18,13 @@
 
 .carousel {
   display: flex;
-  gap: 1px;
-  transition: transform 0.5s;
+  transition: transform 0.5s ease;
 }
 
 .carousel img {
   width: 100%;
-  border-radius: 10px 0 0 0;
+  border-radius: 10px;
+  border-radius: 10px 0px 0px 0px;
   object-fit: contain;
   aspect-ratio: 16/9;
   background-color: #222222;
@@ -52,23 +52,23 @@
 
 .thumbnails {
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  overflow-x: auto;
   gap: 10px;
+  padding: 10px 0;
+  margin-top: 10px;
 }
 
 .thumbnails img {
-  flex-grow: 1;
-  width: 150px;
-  object-fit: contain;
-  aspect-ratio: 16/9;
-  border-radius: 5px;
   cursor: pointer;
+  height: 100px;
+  width: auto; /* Позволяет ширине быть автоматически вычисленной для сохранения пропорций */
   background-color: #222222;
+  transition: transform 0.2s;
 }
 
+
 .thumbnails img.active {
-  border: 2px solid #007acc;
+  border: 2px solid rgb(185, 185, 185);
 }
 
 .project-info {
@@ -78,18 +78,17 @@
 
 .project-info .poster {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 0 10px 0 0;
-  margin: 0;
-  object-fit: cover;
+  aspect-ratio: 4 / 3; 
+  border-radius: 0px 10px 0px 0px;
+  margin: 0px;
+  object-fit: cover; 
 }
-
 .short-description {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 46.5%;
-  position: relative;
+  flex-direction: column; /* Вертикальное размещение содержимого */
+  justify-content: flex-end; /* Содержимое размещается внизу контейнера */
+  height: 46.5%; /* Полная высота контейнера */
+  position: relative; /* Для контроля внутренних элементов */
 }
 
 .details-section h2 {
@@ -97,3 +96,4 @@
   color: #fff;
   margin-bottom: 10px;
 }
+
