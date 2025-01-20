@@ -19,13 +19,12 @@
 .carousel {
   display: flex;
   gap: 1px;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s;
 }
 
 .carousel img {
   width: 100%;
-  border-radius: 10px;
-  border-radius: 10px 0px 0px 0px;
+  border-radius: 10px 0 0 0;
   object-fit: contain;
   aspect-ratio: 16/9;
   background-color: #222222;
@@ -53,14 +52,14 @@
 
 .thumbnails {
   display: flex;
-  justify-content: space-between; /* Равномерное распределение элементов */
+  justify-content: space-between;
   margin-top: 10px;
   gap: 10px;
 }
 
 .thumbnails img {
-  flex-grow: 1; /* Элементы будут растягиваться, чтобы заполнить доступное пространство */
-  width: 150px; /* Ограничиваем максимальную ширину, чтобы они не становились слишком большими */
+  flex-grow: 1;
+  width: 150px;
   object-fit: contain;
   aspect-ratio: 16/9;
   border-radius: 5px;
@@ -79,17 +78,18 @@
 
 .project-info .poster {
   width: 100%;
-  aspect-ratio: 4 / 3; 
-  border-radius: 0px 10px 0px 0px;
-  margin: 0px;
-  object-fit: cover; 
+  aspect-ratio: 4 / 3;
+  border-radius: 0 10px 0 0;
+  margin: 0;
+  object-fit: cover;
 }
+
 .short-description {
   display: flex;
-  flex-direction: column; /* Вертикальное размещение содержимого */
-  justify-content: flex-end; /* Содержимое размещается внизу контейнера */
-  height: 46.5%; /* Полная высота контейнера */
-  position: relative; /* Для контроля внутренних элементов */
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 46.5%;
+  position: relative;
 }
 
 .details-section h2 {

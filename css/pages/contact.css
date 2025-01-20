@@ -8,7 +8,6 @@
 }
 
 form, .contact-info {
-  flex: 1;
   background-color: #3a3a3a;
   padding: 20px;
   border-radius: 8px;
@@ -23,13 +22,11 @@ form {
   gap: 15px;
 }
 
-/* Form Styles */
 form label {
   font-weight: bold;
-  display: block;
 }
 
-form input {
+form input, form textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #555;
@@ -41,15 +38,6 @@ form input {
 }
 
 form textarea {
-  flex-grow: 1;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #555;
-  border-radius: 5px;
-  background-color: #2d2d2d;
-  color: #ffffff;
-  font-size: 1rem;
-  box-sizing: border-box;
   resize: none;
 }
 
@@ -70,7 +58,6 @@ form button:hover {
   background-color: rgba(255, 217, 0, 0.2);
 }
 
-/* Contact Info Styles */
 .contact-info {
   display: flex;
   flex-direction: column;

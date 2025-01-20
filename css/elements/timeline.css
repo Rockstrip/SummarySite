@@ -1,8 +1,6 @@
-/* Timeline Section */
 #work-experience {
   margin-top: 30px;
   padding: 20px;
-  
 }
 
 .timeline {
@@ -48,7 +46,7 @@
   width: 100%;
 }
 
-.timeline-left{
+.timeline-left {
   width: 25%;
 }
 
@@ -90,6 +88,7 @@
   margin-bottom: 5px;
 }
 
+/* Mobile devices: Adjust timeline layout */
 @media (max-width: 768px) {
   .timeline-content {
     flex-direction: column;
@@ -98,14 +97,26 @@
   .timeline-left,
   .timeline-right {
     width: 100%;
+    margin-left: 20px;
   }
 
+  /* Move the timeline line to the left and adjust the markers */
   .timeline::before {
-    left: 20px;
+    left: 0px;
   }
 
   .timeline-item .timeline-marker {
-    left: 20px;
+    left: -11px;
     transform: translateX(0);
+  }
+
+  /* Adjust the layout for mobile: timeline line to the left, content to the right */
+  .timeline-item {
+    flex-direction: row-reverse;
+  }
+
+  .timeline-left,
+  .timeline-right {
+    order: initial; /* Maintain the original order of the elements */
   }
 }

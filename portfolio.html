@@ -5,45 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artur's Portfolio</title>
     <link rel="stylesheet" href="css/pages/portfolio.css">
-    <script src="js/portfolio.js"></script>
+    <script src="js/portfolio.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="about.html"><button><h1>About Me</h1></button></a>
-            <a href="portfolio.html"><button class="active"><h1>Portfolio</h1></button></a>
-            <a href="contact.html"><button><h1>Contact</h1></button></a>
-        </nav>
-    </header>
-    <main>
-        <div class="portfolio-grid" id="portfolio-grid">
-            <!-- Здесь будет динамически добавлен контент -->
+
+  <header>
+    <nav>
+      <a href="about.html"><button><h1>About Me</h1></button></a>
+      <a href="portfolio.html"><button class="active"><h1>Portfolio</h1></button></a>
+      <a href="contact.html"><button><h1>Contact</h1></button></a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="portfolio-grid" id="portfolio-grid">
+      <!-- Content dynamically added via JavaScript -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Me</h3>
+        <p>Email: <a href="mailto:artes5kgc@gmail.com">artes5kgc@gmail.com</a></p>
+        <p>Phone: <a href="tel:+17819647620">+1 (781) 964-7620</a></p>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/arturkashuba" target="_blank">LinkedIn</a>
+          <a href="https://github.com/arturkashuba" target="_blank">GitHub</a>
+          <a href="https://www.upwork.com/freelancers/arturk98" target="_blank">Upwork</a>
         </div>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Me</h3>
-                <p>Email: <a href="mailto:artes5kgc@gmail.com">artes5kgc@gmail.com</a></p>
-                <p>Phone: <a href="tel:+17819647620">+1 (781) 964-7620</a></p>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/arturkashuba" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/arturkashuba" target="_blank">GitHub</a>
-                    <a href="https://www.upwork.com/freelancers/arturk98" target="_blank">Upwork</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Artur Kashuba. All rights reserved.</p>
-        </div>
-      </footer>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Artur Kashuba. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>

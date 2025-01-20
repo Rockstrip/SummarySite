@@ -34,14 +34,17 @@
   flex-direction: column;
 }
 
+.skill-details h3,
+.skill-details p {
+  margin: 0;
+}
+
 .skill-details h3 {
   font-size: 1.2rem;
   color: #ffffff;
-  margin: 0 0 5px 0;
 }
 
 .skill-details p {
   font-size: 0.9rem;
   color: #cccccc;
-  margin: 0;
 }

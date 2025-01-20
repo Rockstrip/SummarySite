@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const portfolioGrid = document.getElementById("portfolio-grid");
 
-            // Генерация HTML для каждого проекта
+            // Generate HTML for each project
             projects.forEach(project => {
                 const projectDiv = document.createElement("div");
                 projectDiv.className = "project";

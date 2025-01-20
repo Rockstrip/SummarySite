@@ -26,7 +26,7 @@ button {
   text-align: center;
 }
 
-button h1{
+button h1 {
   margin: 5px 0;
 }
 
@@ -35,18 +35,18 @@ button.active {
   border-bottom: 2px solid gold;
 }
 
-button:hover {
-  color: #dab900;
-}
-
-button:focus {
-  outline: none;
-}
-
 button:not(.active) {
   color: white;
 }
 
 button:not(.active):hover {
   color: #ddd;
+}
+
+button:hover {
+  color: #dab900;
+}
+
+button:focus {
+  outline: none;
 }

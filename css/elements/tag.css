@@ -1,29 +1,26 @@
-/* Контейнер для тегов */
 .tags-container {
   display: flex;
-  flex-wrap: wrap-reverse; /* Перенос строк: снизу вверх */
-  flex-direction:row;
-  gap: 8px; /* Расстояние между тегами */
-  margin-top: 16px; /* Отступ сверху от описания */
-  margin-top: auto; /* "Прилипает" контейнер к нижнему краю */
+  flex-wrap: wrap-reverse;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 16px;
+  margin-top: auto;
 }
 
-/* Стили для каждого тега */
 .tag {
   display: inline-block;
-  padding: 8px 12px; /* Внутренние отступы */
-  background-color: rgb(204, 174, 2); /* Фон тега */
-  border-radius: 12px; /* Закругленные края */
-  font-size: 14px; /* Размер шрифта */
-  color: black; /* Цвет текста */
+  padding: 8px 12px;
+  background-color: rgb(204, 174, 2);
+  border-radius: 12px;
+  font-size: 14px;
+  color: black;
   text-align: center;
-  cursor: pointer; /* Указывает, что элемент интерактивный */
-  transition: background-color 0.3s, transform 0.2s; /* Эффект при наведении */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Эффект при наведении на тег */
 .tag:hover {
-  background-color: gold; /* Светло-голубой цвет при наведении */
-  transform: scale(1.05); /* Небольшое увеличение */
-  color: black; /* Цвет текста при наведении */
+  background-color: gold;
+  transform: scale(1.05);
+  color: black;
 }
