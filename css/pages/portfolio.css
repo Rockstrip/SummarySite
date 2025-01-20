@@ -8,16 +8,11 @@
 
 .project {
   text-align: center;
-  border: 1px solid #555;
-  border-radius: 10px;
-  padding: 10px;
-  background-color: #3a3a3a;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project:hover {
   transform: translateY(-2.5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .project img {
