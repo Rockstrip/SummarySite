@@ -61,6 +61,14 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
         }
 
+        const video = document.querySelector(".video");
+        if (video && projectData.video) {
+            const source = document.createElement("source");
+            source.src = `Resources/Portfolio/${projectData.title}/gameplay.mp4`; // Обновляем путь
+            source.type = "video/mp4";
+            video.appendChild(source);
+        }
+
         const detailedDescription = document.querySelector(".detailed-description");
         if (detailedDescription) {
             detailedDescription.textContent = projectData.detailedDescription;

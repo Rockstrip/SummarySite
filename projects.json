@@ -8,7 +8,8 @@
         "shortDescription": "Classic 3D chess game, with the feature: players can use katana, which was created in the SSS app.",
         "detailedDescription": "3D chess game with integration of katana created in the Samurai Swords Store app.",
         "screenshotsExtension": "jpg",
-        "screenshots": []
+        "screenshots": [],
+      "video": ""
     },
     {
         "title": "Samurai Swords Store",
@@ -19,7 +20,8 @@
         "shortDescription": "The application was developed for a company engaged in the production of combat katanas. In the app, users can customize the configuration and order a katana.",
         "detailedDescription": "Users can customize the configuration and order a katana based on their own designs.",
         "screenshotsExtension": "jpg",
-        "screenshots": []
+        "screenshots": [],
+      "video": ""
     },
     {
         "title": "Haunted Houses",
@@ -30,7 +32,8 @@
         "shortDescription": "Shooter with dungeon generation, unique to each match. Developed for Lumighost Ltd.",
         "detailedDescription": "Welcome to the exciting world of Haunted Houses, our own crypto game! It’s a game where you should haunt ghosts in different locations. Haunted Houses is presented in a first-person shooter mode with adventure and RPG genre elements. The player controls his character using a touch gamepad (mobile) or keyboard and mouse (PC).\nYou can play in different locations and gradually move to more complex levels. The main goal is to hunt ghosts and to catch them more. Everyday you have an opportunity to get in the lucky ones ranking and earn by playing. In order to win you should outwit the competition, get smarter and faster. But just as much more interesting!\nWe’ve launched a game where players get into a competitive environment where they should be more agile and swift than rivals. It is this factor that contributes to an increase the interest and excitement of players, as well as increases session duration and helps to develop an in-game economy. Every day, a daily rating will be formed, which you can get into if you catch more ghosts than the rest, and pass the levels more successfully. Nobody can stop you because the results of the game will depend on you.Show everyone who’s the best ghost hunter around here!The \ngame with P2E mechanics and it’s based on the own $LUMIGHOST Token. It’s a prime example of our blockchain game development.\nNFT integration is planned in the nearest future.",
         "screenshotsExtension": "webp",
-        "screenshots": []
+        "screenshots": [],
+      "video": ""
     },
 
     {
@@ -42,7 +45,8 @@
         "shortDescription": "iTicket is a ticketing company, and I created a mobile app for them. Lots of work on the UI and runtime loading objects.",
         "detailedDescription": "Developed dynamic (in runtime) loading .gltf models, using API for dynamic loading posters and tickets.",
         "screenshotsExtension": "jpg",
-        "screenshots": []
+        "screenshots": [],
+      "video": ""
     },
     {
         "title": "RudderStack",
@@ -53,7 +57,8 @@
         "shortDescription": "RudderStack is a company that provides analytics SDK for most popular platforms. 40,000+ sites and apps run RudderStack. I developed an SDK for Unity.",
         "detailedDescription": "Developed SDK for Unity for RudderStack analytics.",
         "screenshotsExtension": "webp",
-        "screenshots": []
+        "screenshots": [],
+      "video": ""
     },
     {
         "title": "DeltaP3",
@@ -64,7 +69,8 @@
         "shortDescription": "Gnaw tree, build your dam and block the river.",
         "detailedDescription": "Gnaw tree, build your dam and block the river.",
         "screenshotsExtension": "jpg",
-        "screenshots": []
+        "screenshots": [],
+      "video": ""
     },
 
     {
@@ -76,7 +82,8 @@
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Developed the Beaver Lumberjack game, where players block rivers by building dams.",
       "screenshotsExtension": "jpg",
-      "screenshots": []
+      "screenshots": [],
+      "video": ""
     },
     {
         "title": "Heroes Auto Battle",
@@ -87,7 +94,8 @@
         "shortDescription": "Autochess with more than 50 characters, including shop and in-app purchases.",
         "detailedDescription": "Developed autochess game with over 50 characters, including in-app purchases.",
         "screenshotsExtension": "jpg",
-        "screenshots": []
+        "screenshots": [],
+      "video": ""
     },
     {
         "title": "Jiggler",
@@ -98,7 +106,8 @@
         "shortDescription": "Gnaw tree, build your dam and block the river.",
         "detailedDescription": "Gnaw tree, build your dam and block the river.",
         "screenshotsExtension": "webp",
-        "screenshots": []
+        "screenshots": [],
+      "video": ""
     },
 
     {
@@ -110,7 +119,8 @@
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Gnaw tree, build your dam and block the river.",
       "screenshotsExtension": "jpg",
-      "screenshots": []
+      "screenshots": [],
+      "video": ""
     },
     {
       "title": "Honey Cut",
@@ -118,10 +128,11 @@
       "developer": "Artur Kashuba",
       "publisher": "Mindom Ltd",
       "tags": ["Unity3D", "C#", "VFX", "Realtime Mesh Modify"],
-      "shortDescription": "Gnaw tree, build your dam and block the river.",
-      "detailedDescription": "Gnaw tree, build your dam and block the river.",
+      "shortDescription": "Relax game with liquid simulation, mesh rolling and mesh cutting",
+      "detailedDescription": "",
       "screenshotsExtension": "jpg",
-      "screenshots": []
+      "screenshots": [],
+      "video": "<source src=\"Resources/Portfolio/Honey Cut/gameplay.mp4\" type=\"video/mp4\">"
     },
     {
       "title": "iBall",
@@ -132,7 +143,8 @@
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Gnaw tree, build your dam and block the river.",
       "screenshotsExtension": "jpg",
-      "screenshots": []
+      "screenshots": [],
+      "video": ""
     },
 
     {
@@ -144,7 +156,8 @@
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Gnaw tree, build your dam and block the river.",
       "screenshotsExtension": "jpg",
-      "screenshots": []
+      "screenshots": [],
+      "video": ""
     },
     {
       "title": "Magic Swamp",
@@ -155,7 +168,8 @@
       "shortDescription": "Gnaw tree, build your dam and block the river.",
       "detailedDescription": "Gnaw tree, build your dam and block the river.",
       "screenshotsExtension": "webp",
-      "screenshots": []
+      "screenshots": [],
+      "video": ""
     },
     {
         "title": "Shio",
@@ -166,7 +180,8 @@
         "shortDescription": "Gnaw tree, build your dam and block the river.",
         "detailedDescription": "Gnaw tree, build your dam and block the river.",
         "screenshotsExtension": "webp",
-        "screenshots": []
+        "screenshots": [],
+      "video": ""
     },
 
     {
@@ -178,7 +193,8 @@
         "shortDescription": "Gnaw tree, build your dam and block the river.",
         "detailedDescription": "Gnaw tree, build your dam and block the river.",
         "screenshotsExtension": "jpg",
-        "screenshots": []
+        "screenshots": [],
+      "video": ""
     }
   ]
   
