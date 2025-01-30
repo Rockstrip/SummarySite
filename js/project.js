@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const getQueryParam = (param) =>
         new URLSearchParams(window.location.search).get(param);
@@ -75,6 +77,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    const updateProjectLinks = (links) => {
+        const linksContainer = document.querySelector(".project-links");
+        if (!linksContainer) return;
+    
+        if (links && links.length > 0) {
+            linksContainer.innerHTML = links
+                .map(link => `<a href="${link.url}" target="_blank" class="project-link">${link.name}</a>`)
+                .join(" | ");
+        } else {
+            linksContainer.innerHTML = "<p>No links available.</p>";
+        }
+    };
+
     fetchJSON("projects.json")
         .then((projects) => {
             const projectData = projects.find((p) => p.title === projectName);
@@ -116,6 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Обновляем остальные данные проекта
             updateProjectDetails(projectData, screenshotBasePath);
+            updateProjectLinks(projectData.links);
         })
         .catch((error) => console.error("Error loading projects data:", error));
 });
