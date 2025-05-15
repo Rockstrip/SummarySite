@@ -1,0 +1,16 @@
+.main-title {
+  font-size: 60px;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #cccccc;
+}
+
+.section {
+  width: 100%;
+  padding: 0px 0px;
+  margin-bottom: 1rem;
+}

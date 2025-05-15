@@ -1,0 +1,37 @@
+header {
+  background-color: #1a1a1a;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s;
+}
+
+nav button:hover {
+  color: #646cff;
+}
+
+nav button.active {
+  color: #646cff;
+}
+
+nav h1 {
+  font-size: 1.2rem;
+  margin: 0;
+} 
