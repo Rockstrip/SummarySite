@@ -65,32 +65,32 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <div className="project-card">
+    <div className="projectCard">
       <img 
         src={imageUrl}
         alt={project.title}
-        className="project-image"
+        className="projectCard-image"
       />
-      <div className="project-content">
+      <div className="projectCard-content">
         <h3>{project.title}</h3>
-        <p className="project-description">{project.shortDescription}</p>
-        <div className="project-links">
-          <div className="project-links-left">
+        <p className="projectCard-description">{project.shortDescription}</p>
+        <div className="projectCard-links">
+          <div className="projectCard-links-left">
             {getProjectLinks().map((link) => (
               <a
                 key={link.url}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="project-link"
+                className="projectCard-link"
                 title={link.name}
               >
                 <link.Icon />
               </a>
             ))}
           </div>
-          <div className="project-links-right">
-            <Link to={`/project/${encodeURIComponent(project.title)}`} className="project-link">
+          <div className="projectCard-links-right">
+            <Link to={`/project/${encodeURIComponent(project.title)}`} className="projectCard-link">
               Learn More
             </Link>
           </div>

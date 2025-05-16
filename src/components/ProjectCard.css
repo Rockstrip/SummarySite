@@ -1,4 +1,4 @@
-.project-card {
+.projectCard {
   background: #1a1a1a;
   border-radius: 8px;
   width: 300px;
@@ -9,25 +9,25 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.project-card:hover {
+.projectCard:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.project-image {
+.projectCard-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 8px 8px 0 0;
 }
 
-.project-content {
+.projectCard-content {
   padding: 1rem;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.project-card h3 {
+.projectCard h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   color: #ffffff;
@@ -36,13 +36,13 @@
   text-overflow: ellipsis;
 }
 
-.project-date {
+.projectCard-date {
   font-size: 0.9rem;
   color: #888;
   margin-bottom: 0.5rem;
 }
 
-.project-description {
+.projectCard-description {
   color: #cccccc;
   line-height: 1.4;
   flex: 1;
@@ -54,7 +54,7 @@
   font-size: 0.9rem;
 }
 
-.project-tags {
+.projectCard-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -68,24 +68,24 @@
   font-size: 0.8rem;
 }
 
-.project-links {
+.projectCard-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1rem;
 }
 
-.project-links-left {
+.projectCard-links-left {
   display: flex;
   gap: 0.5rem;
   flex: 1;
 }
 
-.project-links-right {
+.projectCard-links-right {
   margin-left: auto;
 }
 
-.project-link {
+.projectCard-link {
   padding: 0.5rem;
   background-color: #333;
   color: #ffffff;
@@ -98,18 +98,18 @@
   gap: 0.25rem;
 }
 
-.project-link:hover {
+.projectCard-link:hover {
   background-color: #444;
   transform: translateY(-2px);
   color: #ffd700;
 }
 
-.project-link img {
+.projectCard-link img {
   width: 16px;
   height: 16px;
 }
 
-.project-link svg {
+.projectCard-link svg {
   width: 16px;
   height: 16px;
   color: currentColor;
