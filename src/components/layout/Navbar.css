@@ -24,11 +24,18 @@ nav button {
 }
 
 nav button:hover {
-  color: #646cff;
+  color: #ffd700;
+  border-color: transparent;
+}
+
+nav button:focus,
+nav button:focus-visible {
+  outline: none;
+  border-color: transparent;
 }
 
 nav button.active {
-  color: #646cff;
+  color: #dab900;
 }
 
 nav h1 {
