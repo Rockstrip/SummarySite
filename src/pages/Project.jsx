@@ -22,7 +22,7 @@ const Project = () => {
       // Load logo first
       const images = [];
       try {
-        const logoModule = await import(`../assets/portfolio/${projectTitle}/logo.jpg`);
+        const logoModule = await import(`../assets/Portfolio/${projectTitle}/logo.jpg`);
         images.push(logoModule.default);
       } catch (error) {
         console.warn(`No logo found for ${projectTitle}`);
@@ -32,7 +32,7 @@ const Project = () => {
       let imageIndex = 1;
       while (true) {
         try {
-          const imageModule = await import(`../assets/portfolio/${projectTitle}/${imageIndex}.jpg`);
+          const imageModule = await import(`../assets/Portfolio/${projectTitle}/${imageIndex}.jpg`);
           images.push(imageModule.default);
           imageIndex++;
         } catch (error) {
@@ -126,7 +126,7 @@ const Project = () => {
     <main className="project-page">
       {/* Top Section */}
       <div className="project-header">
-        <h1 className="project-title">{project.title}</h1>
+        <h2 className="project-title">{project.title}</h2>
       </div>
 
       {/* Main Content Area */}
@@ -199,13 +199,6 @@ const Project = () => {
                 <strong>Release Date:</strong>
                 <span>{project.releaseDate}</span>
               </div>
-              
-              {project.developer && (
-                <div className="metadata-item">
-                  <strong>Developer:</strong>
-                  <span>{project.developer}</span>
-                </div>
-              )}
               
               {project.publisher && (
                 <div className="metadata-item">
