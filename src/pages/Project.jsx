@@ -94,78 +94,109 @@ const Project = () => {
 
   return (
     <main className="project-page">
+      {/* Top Section */}
       <div className="project-header">
-        <h1>{project.title}</h1>
-        <p className="project-date">Release Date: {project.releaseDate}</p>
+        <h1 className="project-title">{project.title}</h1>
       </div>
 
-      <div className="project-layout">
-        <div className="project-main-content">
-          <div className="project-carousel-container">
-            <Slider {...sliderSettings}>
-              {images.map((image, index) => (
-                <div key={index} className="carousel-slide">
-                  <img 
-                    src={image} 
-                    alt={`${project.title} - ${index === 0 ? 'Logo' : `Screenshot ${index}`}`}
-                    className="project-carousel-image"
-                  />
-                </div>
-              ))}
-            </Slider>
-          </div>
-
-          <div className="project-description">
-            <h2>About This Project</h2>
-            <p>{project.detailedDescription || project.shortDescription}</p>
-          </div>
-        </div>
-
-        <div className="project-sidebar">
-          {project.links && project.links.length > 0 && (
-            <div className="info-section">
-              <h2>Links</h2>
-              <div className="project-links">
-                {project.links.map(link => (
-                  <a
-                    key={link.url}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link"
-                  >
-                    {link.name}
-                  </a>
+      {/* Main Content Area */}
+      <div className="project-content">
+        {/* Banner and Sidebar Layout */}
+        <div className="project-main-section">
+          {/* Left: Banner/Carousel Section */}
+          <div className="project-banner">
+            <div className="project-carousel-container">
+              <Slider {...sliderSettings}>
+                {images.slice(1).map((image, index) => (
+                  <div key={index} className="carousel-slide">
+                    <img 
+                      src={image} 
+                      alt={`${project.title} - Screenshot ${index + 1}`}
+                      className="project-carousel-image"
+                    />
+                  </div>
                 ))}
-              </div>
+              </Slider>
+              {/* Overlay Notice */}
+              {project.notices && (
+                <div className="project-notices">
+                  {project.notices.map((notice, index) => (
+                    <span key={index} className="notice-text">{notice}</span>
+                  ))}
+                </div>
+              )}
             </div>
-          )}
+          </div>
 
-          <div className="info-section">
-            <h2>Technologies</h2>
+          {/* Right: Game Info Sidebar */}
+          <div className="project-sidebar">
+            <div className="game-box-art">
+              <img 
+                src={images[0]} 
+                alt={`${project.title} logo`}
+                className="project-logo"
+              />
+            </div>
+
+            <div className="game-brief">
+              <p>{project.shortDescription}</p>
+            </div>
+
+            <div className="game-metadata">
+              <div className="metadata-item">
+                <strong>Release Date:</strong>
+                <span>{project.releaseDate}</span>
+              </div>
+              
+              {project.developer && (
+                <div className="metadata-item">
+                  <strong>Developer:</strong>
+                  <span>{project.developer}</span>
+                </div>
+              )}
+              
+              {project.publisher && (
+                <div className="metadata-item">
+                  <strong>Publisher:</strong>
+                  <span>{project.publisher}</span>
+                </div>
+              )}
+            </div>
+
             <div className="project-tags">
               {project.tags.map(tag => (
                 <span key={tag} className="tag">{tag}</span>
               ))}
             </div>
           </div>
+        </div>
 
-          {(project.developer || project.publisher) && (
-            <div className="info-section">
-              <h2>Credits</h2>
-              <div className="credits-list">
-                {project.developer && (
-                  <div className="credits-item">
-                    <strong>Developer</strong>
-                    <span>{project.developer}</span>
-                  </div>
-                )}
-                {project.publisher && (
-                  <div className="credits-item">
-                    <strong>Publisher</strong>
-                    <span>{project.publisher}</span>
-                  </div>
-                )}
+        {/* Bottom Section */}
+        <div className="project-details-section">
+          {/* Left: Detailed Description */}
+          <div className="project-description">
+            <h2>About This Project</h2>
+            <div className="description-content">
+              <p>{project.detailedDescription || project.shortDescription}</p>
+            </div>
+          </div>
+
+          {/* Right: Platform Links */}
+          {project.links && project.links.length > 0 && (
+            <div className="platform-links">
+              <h2>Available Platforms</h2>
+              <div className="links-grid">
+                {project.links.map(link => (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="platform-link"
+                  >
+                    {link.name}
+                  </a>
+                ))}
               </div>
             </div>
           )}
