@@ -47,7 +47,11 @@
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: 16px;
-  background: #1d1d1d;
+  background: linear-gradient(90deg, #2d2d2d, #2d2d2d 20%, #1d1d1d 29%, #1d1d1d 71%, #2d2d2d 80%, #2d2d2d);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
 }
 
 .project-banner {
@@ -275,8 +279,34 @@
 .carousel-thumbnails {
   margin: 8px 0;
   border-radius: 4px;
-  overflow: hidden;
-  height: calc(112px * 9/16);
+  position: relative;
+}
+
+/* Force Slick slider to show scrollbar */
+.carousel-thumbnails .slick-slider {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: thin;
+  scrollbar-color: #dab900 #2d2d2d;
+}
+
+/* Webkit scrollbar styles */
+.carousel-thumbnails .slick-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel-thumbnails .slick-slider::-webkit-scrollbar-track {
+  background: #2d2d2d;
+  border-radius: 4px;
+}
+
+.carousel-thumbnails .slick-slider::-webkit-scrollbar-thumb {
+  background: #dab900;
+  border-radius: 4px;
+}
+
+.carousel-thumbnails .slick-slider::-webkit-scrollbar-thumb:hover {
+  background: #f4d000;
 }
 
 .carousel-thumbnails .slick-track {
@@ -284,7 +314,12 @@
   align-items: center;
   margin-left: -4px;
   margin-right: -4px;
-  height: calc(120px * 9/16) !important;
+  min-width: 100% !important;
+}
+
+.carousel-thumbnails .slick-list {
+  overflow: visible !important;
+  margin: 0 -4px;
 }
 
 .thumbnail-slide {

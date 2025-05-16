@@ -85,8 +85,11 @@ const Project = () => {
     slidesToScroll: 1,
     swipeToSlide: true,
     focusOnSelect: true,
-    arrows: true,
+    arrows: false,
     variableWidth: true,
+    draggable: true,
+    useCSS: true,
+    useTransform: false,
     beforeChange: (current, next) => {
       if (mainSlider.current) {
         mainSlider.current.slickGoTo(next);
