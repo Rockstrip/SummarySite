@@ -53,7 +53,7 @@ export const projects = [
       "developer": "Artur Kashuba",
       "publisher": "iTicket",
       "tags": ["Unity3D", "C#", "API", "UI", "QR scan", "NFT"],
-      "shortDescription": "iTicket is a ticketing company, and I created a mobile app for them. Lots of work on the UI and runtime loading objects.",
+      "shortDescription": "Ticketing application where users can view NFT in personal 3D Room. A lot of work on the UI and runtime loading objects",
       "detailedDescription": "Developed dynamic (in runtime) loading .gltf models, using API for dynamic loading posters and tickets.",
       "screenshotsExtension": "jpg",
       "screenshots": [],
@@ -66,7 +66,7 @@ export const projects = [
       "developer": "Artur Kashuba",
       "publisher": "RudderStack",
       "tags": ["Unity3D", "C#", "API", "SDK"],
-      "shortDescription": "RudderStack is a company that provides analytics SDK for most popular platforms. 40,000+ sites and apps run RudderStack. I developed an SDK for Unity.",
+      "shortDescription": "Analytics SDK for most popular platforms. 40,000+ sites and apps run RudderStack",
       "detailedDescription": "Developed SDK for Unity for RudderStack analytics.",
       "screenshotsExtension": "webp",
       "screenshots": [],
@@ -81,8 +81,8 @@ export const projects = [
       "developer": "Artur Kashuba",
       "publisher": "",
       "tags": ["Unity3D", "C#", "UI"],
-      "shortDescription": "Gnaw tree, build your dam and block the river.",
-      "detailedDescription": "Gnaw tree, build your dam and block the river.",
+      "shortDescription": "Set markers on the map, and then move to the points",
+      "detailedDescription": "WebGL game where users can set markers on the map, and then move to the points",
       "screenshotsExtension": "jpg",
       "screenshots": [],
     "video": false,
@@ -100,7 +100,9 @@ export const projects = [
     "screenshotsExtension": "jpg",
     "screenshots": [],
     "video": false,
-    "links": []
+    "links": [
+      { "name": "Github", "url": "https://github.com/GrayBearLogic/Beaver-Lumberjack" }
+    ]
   },
   {
       "title": "Heroes Auto Battle",
@@ -113,7 +115,9 @@ export const projects = [
       "screenshotsExtension": "jpg",
       "screenshots": [],
     "video": false,
-    "links": []
+    "links": [
+      { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.eg.autobattlehero" }
+    ]
   },
   {
       "title": "Jiggler",
@@ -121,12 +125,14 @@ export const projects = [
       "developer": "Artur Kashuba",
       "publisher": "Artur Kashuba",
       "tags": ["Unity3D", "C#", "UI", "VFX"],
-      "shortDescription": "Gnaw tree, build your dam and block the river.",
-      "detailedDescription": "Gnaw tree, build your dam and block the river.",
+      "shortDescription": "2D Platformer with unique mechanics",
+      "detailedDescription": "",
       "screenshotsExtension": "webp",
       "screenshots": [],
     "video": false,
-    "links": []
+    "links": [
+      { "name": "Github", "url": "https://github.com/GrayBearLogic/Jiggler" }
+    ]
   },
 
   {
@@ -135,8 +141,8 @@ export const projects = [
     "developer": "Artur Kashuba",
     "publisher": "",
     "tags": ["Unity3D", "C#", "UI", "Ads"],
-    "shortDescription": "Gnaw tree, build your dam and block the river.",
-    "detailedDescription": "Gnaw tree, build your dam and block the river.",
+    "shortDescription": "2D Infinite Runner: Tap to jump, avoid obstacles and collect coins",
+    "detailedDescription": "",
     "screenshotsExtension": "jpg",
     "screenshots": [],
     "video": false,
@@ -161,7 +167,7 @@ export const projects = [
     "developer": "Artur Kashuba",
     "publisher": "Palbooro Ltd",
     "tags": ["Unity3D", "C#", "UI", "VFX", "Multiplayer"],
-    "shortDescription": "Gnaw tree, build your dam and block the river.",
+    "shortDescription": "Multiplayer PvP game: Defend your base and attack the enemy",
     "detailedDescription": "Gnaw tree, build your dam and block the river.",
     "screenshotsExtension": "jpg",
     "screenshots": [],
@@ -175,8 +181,8 @@ export const projects = [
     "developer": "Artur Kashuba",
     "publisher": "",
     "tags": ["Unity3D", "C#", "UI", "VFX", "NFT"],
-    "shortDescription": "Gnaw tree, build your dam and block the river.",
-    "detailedDescription": "Gnaw tree, build your dam and block the river.",
+    "shortDescription": "Web3 Infinite Runner, where users can collect coins and NFTs",
+    "detailedDescription": "",
     "screenshotsExtension": "jpg",
     "screenshots": [],
     "video": false,
@@ -190,13 +196,13 @@ export const projects = [
     "developer": "Artur Kashuba",
     "publisher": "Lumighost Ltd.",
     "tags": ["Unity3D", "C#", "UI", "VFX"],
-    "shortDescription": "Gnaw tree, build your dam and block the river.",
-    "detailedDescription": "Gnaw tree, build your dam and block the river.",
+    "shortDescription": "Defend your swamp from monsters and kill the boss",
+    "detailedDescription": "",
     "screenshotsExtension": "webp",
     "screenshots": [],
     "video": false,
     "links": [
-      { "name": "App Store", "url": "https://apps.apple.com/us/app/magic-swamp/id6443608622" }
+      { "name": "App Store", "url": "https://apps.apple.com/us/app/magic-swamp/id6443608622" },
   ]
   },
   {
@@ -205,8 +211,8 @@ export const projects = [
       "developer": "Artur Kashuba",
       "publisher": "Artur Kashuba",
       "tags": ["Unity3D", "C#", "VFX"],
-      "shortDescription": "Gnaw tree, build your dam and block the river.",
-      "detailedDescription": "Gnaw tree, build your dam and block the river.",
+      "shortDescription": "Runner-Fighter F2P mobile game with weapons and skills",
+      "detailedDescription": "Shio Hashtag Queens Superhero is a runner-fighter F2P mobile game. The game is developed in Unity and designed for touch input only. Shio is a digital era female Tarzan-James Bond style justice fighter who is skilled in martial arts and electromagnetic weaponry. Shio also sings in real life ( songs available via Virgin thru Apple Music, Amazon Music and Spotify) in order to raise awareness with and draw support from, the public for her in-game fights against evil gangs terrorizing her city. Shio and the Hashtag Queens, as social media stars, have attracted hundreds of millions of views of their animated gifs via Giphy, Facebook, Instagram, X etc.",
       "screenshotsExtension": "webp",
       "screenshots": [],
     "video": false,
@@ -216,18 +222,19 @@ export const projects = [
 
     ]
   },
-
   {
       "title": "Mazer Minotazer",
       "releaseDate": "2021",
       "developer": "Artur Kashuba",
       "publisher": "Artur Kashuba",
       "tags": ["Unity3D", "C#", "VFX", "Procedural Generator"],
-      "shortDescription": "Gnaw tree, build your dam and block the river.",
-      "detailedDescription": "Gnaw tree, build your dam and block the river.",
+      "shortDescription": "Infinite dungeon generator without beginning and end",
+      "detailedDescription": "",
       "screenshotsExtension": "jpg",
       "screenshots": [],
     "video": false,
-    "links": []
+    "links": [
+      { "name": "Github", "url": "https://github.com/Rockstrip/MazerMinotazer" }
+    ]
   }
 ]
