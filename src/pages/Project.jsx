@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { projects } from './projects.js';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -12,6 +12,9 @@ const Project = () => {
   const [project, setProject] = useState(null);
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const mainSlider = useRef(null);
+  const thumbnailSlider = useRef(null);
 
   const loadProjectImages = useCallback(async (projectTitle) => {
     setLoading(true);
@@ -63,22 +66,49 @@ const Project = () => {
     loadProjectImages(foundProject.title);
   }, [projectId, navigate, loadProjectImages]);
 
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
+  const mainSettings = {
+    dots: false,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
-    adaptiveHeight: true,
+    arrows: false,
+    fade: true,
+    beforeChange: (current, next) => setCurrentSlide(next)
+  };
+
+  const thumbnailSettings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 8,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    focusOnSelect: true,
     arrows: true,
+    variableWidth: true,
+    beforeChange: (current, next) => {
+      if (mainSlider.current) {
+        mainSlider.current.slickGoTo(next);
+      }
+    },
     responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 6
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4
+        }
+      },
       {
         breakpoint: 768,
         settings: {
-          arrows: false
+          slidesToShow: 3
         }
       }
     ]
@@ -106,7 +136,7 @@ const Project = () => {
           {/* Left: Banner/Carousel Section */}
           <div className="project-banner">
             <div className="project-carousel-container">
-              <Slider {...sliderSettings}>
+              <Slider ref={mainSlider} {...mainSettings}>
                 {images.slice(1).map((image, index) => (
                   <div key={index} className="carousel-slide">
                     <img 
@@ -125,6 +155,28 @@ const Project = () => {
                   ))}
                 </div>
               )}
+            </div>
+            
+            <div className="carousel-thumbnails">
+              <Slider ref={thumbnailSlider} {...thumbnailSettings}>
+                {images.slice(1).map((image, index) => (
+                  <div 
+                    key={index} 
+                    className={`thumbnail-slide ${currentSlide === index ? 'active' : ''}`}
+                    onClick={() => {
+                      if (mainSlider.current) {
+                        mainSlider.current.slickGoTo(index);
+                      }
+                    }}
+                  >
+                    <img 
+                      src={image} 
+                      alt={`Thumbnail ${index + 1}`}
+                      className="thumbnail-image"
+                    />
+                  </div>
+                ))}
+              </Slider>
             </div>
           </div>
 

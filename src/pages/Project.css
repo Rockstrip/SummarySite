@@ -212,18 +212,7 @@
 
 /* Carousel Navigation */
 .slick-dots {
-  bottom: 16px;
-}
-
-.slick-dots li button:before {
-  color: #dab900;
-  opacity: 0.5;
-  font-size: 10px;
-}
-
-.slick-dots li.slick-active button:before {
-  color: #dab900;
-  opacity: 1;
+  display: none !important;
 }
 
 .slick-prev,
@@ -281,5 +270,110 @@
   .project-description,
   .platform-links {
     padding: 1.5rem;
+  }
+}
+
+.carousel-thumbnails {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: rgba(45, 45, 45, 0.8);
+  border-radius: 4px;
+}
+
+.carousel-thumbnails .slick-track {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+
+.thumbnail-slide {
+  width: 120px !important;
+  padding: 0 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.thumbnail-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 2px;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* Active thumbnail */
+.thumbnail-slide.active .thumbnail-image {
+  opacity: 1;
+  border-color: #dab900;
+  transform: scale(1.05);
+}
+
+.thumbnail-slide:hover .thumbnail-image {
+  opacity: 0.8;
+  border-color: rgba(218, 185, 0, 0.5);
+}
+
+/* Remove old active styles */
+.slick-current .thumbnail-image {
+  opacity: 1;
+}
+
+/* Thumbnail navigation arrows */
+.carousel-thumbnails .slick-prev,
+.carousel-thumbnails .slick-next {
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 50%;
+}
+
+.carousel-thumbnails .slick-prev {
+  left: -15px;
+}
+
+.carousel-thumbnails .slick-next {
+  right: -15px;
+}
+
+.carousel-thumbnails .slick-prev:before,
+.carousel-thumbnails .slick-next:before {
+  font-size: 20px;
+  color: #dab900;
+  opacity: 0.75;
+}
+
+.carousel-thumbnails .slick-prev:hover:before,
+.carousel-thumbnails .slick-next:hover:before {
+  opacity: 1;
+}
+
+/* Hide disabled arrows */
+.carousel-thumbnails .slick-disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Smooth fade transition for main carousel */
+.project-carousel-container .slick-slide {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-carousel-container .slick-slide.slick-active {
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .thumbnail-slide {
+    width: 100px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .thumbnail-slide {
+    width: 80px !important;
   }
 } 
