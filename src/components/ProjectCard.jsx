@@ -29,17 +29,29 @@ const GithubIcon = () => (
 );
 
 const ProjectCard = ({ project }) => {
-  const [imageUrl, setImageUrl] = useState("https://placehold.co/600x400/EEE/31343C?font=lora&text=?");
+  const [imageUrl, setImageUrl] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const loadImage = async () => {
-      try {
-        const imageModule = await import(`../assets/Portfolio/${project.title}/logo.jpg`);
-        setImageUrl(imageModule.default);
-      } catch (fallbackError) {
-        console.warn(`Could not load image for ${project.title}:`, fallbackError);
-        setImageUrl("https://placehold.co/600x400/EEE/31343C?font=lora&text=?");
+      setIsLoading(true);
+      const extensions = ['jpg', 'png', 'webp'];
+      
+      for (const ext of extensions) {
+        try {
+          const imageModule = await import(`../assets/Portfolio/${project.title}/logo.${ext}`);
+          setImageUrl(imageModule.default);
+          setIsLoading(false);
+          return; // Exit if successful
+        } catch (error) {
+          continue; // Try next extension
+        }
       }
+      
+      // If no image was found, use placeholder
+      console.warn(`Could not load logo for ${project.title}`);
+      setImageUrl("https://placehold.co/600x400/EEE/31343C?font=lora&text=?");
+      setIsLoading(false);
     };
     loadImage();
   }, [project.title]);
@@ -66,11 +78,15 @@ const ProjectCard = ({ project }) => {
 
   return (
     <div className="projectCard">
-      <img 
-        src={imageUrl}
-        alt={project.title}
-        className="projectCard-image"
-      />
+      <div className={`projectCard-image-container ${isLoading ? 'loading' : ''}`}>
+        {imageUrl && (
+          <img 
+            src={imageUrl}
+            alt={project.title}
+            className="projectCard-image"
+          />
+        )}
+      </div>
       <div className="projectCard-content">
         <h3>{project.title}</h3>
         <p className="projectCard-description">{project.shortDescription}</p>

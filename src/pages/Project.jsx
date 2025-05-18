@@ -97,7 +97,7 @@ const Project = () => {
     slidesToShow: 8,
     slidesToScroll: 1,
     swipeToSlide: true,
-    focusOnSelect: true,
+    focusOnSelect: false,
     arrows: false,
     variableWidth: true,
     draggable: true,
