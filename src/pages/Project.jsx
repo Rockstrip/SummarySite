@@ -19,34 +19,47 @@ const Project = () => {
   const loadProjectImages = useCallback(async (projectTitle) => {
     setLoading(true);
     try {
+      const media = [];
+      const extensions = ['jpg', 'png', 'webp', 'gif', 'mp4'];
+      
       // Load logo first
-      const images = [];
       try {
         const logoModule = await import(`../assets/Portfolio/${projectTitle}/logo.jpg`);
-        images.push(logoModule.default);
+        media.push({ type: 'image', src: logoModule.default });
       } catch (error) {
         console.warn(`No logo found for ${projectTitle}`);
       }
 
-      // Keep trying to load numbered images until one fails
-      let imageIndex = 1;
+      // Keep trying to load numbered media until one fails
+      let mediaIndex = 1;
       while (true) {
-        try {
-          const imageModule = await import(`../assets/Portfolio/${projectTitle}/${imageIndex}.jpg`);
-          images.push(imageModule.default);
-          imageIndex++;
-        } catch (error) {
-          // Stop when we can't load the next image
-          break;
+        let mediaLoaded = false;
+        
+        // Try each extension
+        for (const ext of extensions) {
+          try {
+            const mediaModule = await import(`../assets/Portfolio/${projectTitle}/${mediaIndex}.${ext}`);
+            media.push({ 
+              type: ext === 'mp4' ? 'video' : 'image',
+              src: mediaModule.default 
+            });
+            mediaLoaded = true;
+            break;
+          } catch (error) {
+            continue;
+          }
         }
+        
+        if (!mediaLoaded) break;
+        mediaIndex++;
       }
 
-      setImages(images.length > 0 
-        ? images 
-        : ["https://placehold.co/1200x600/EEE/31343C?font=lora&text=No+Image"]);
+      setImages(media.length > 0 
+        ? media 
+        : [{ type: 'image', src: "https://placehold.co/1200x600/EEE/31343C?font=lora&text=No+Image" }]);
     } catch (error) {
-      console.warn(`Error loading images for ${projectTitle}:`, error);
-      setImages(["https://placehold.co/1200x600/EEE/31343C?font=lora&text=No+Image"]);
+      console.warn(`Error loading media for ${projectTitle}:`, error);
+      setImages([{ type: 'image', src: "https://placehold.co/1200x600/EEE/31343C?font=lora&text=No+Image" }]);
     } finally {
       setLoading(false);
     }
@@ -140,13 +153,22 @@ const Project = () => {
           <div className="project-banner">
             <div className="project-carousel-container">
               <Slider ref={mainSlider} {...mainSettings}>
-                {images.slice(1).map((image, index) => (
+                {images.slice(1).map((media, index) => (
                   <div key={index} className="carousel-slide">
-                    <img 
-                      src={image} 
-                      alt={`${project.title} - Screenshot ${index + 1}`}
-                      className="project-carousel-image"
-                    />
+                    {media.type === 'video' ? (
+                      <video 
+                        src={media.src}
+                        className="project-carousel-image"
+                        controls
+                        playsInline
+                      />
+                    ) : (
+                      <img 
+                        src={media.src} 
+                        alt={`${project.title} - Media ${index + 1}`}
+                        className="project-carousel-image"
+                      />
+                    )}
                   </div>
                 ))}
               </Slider>
@@ -162,7 +184,7 @@ const Project = () => {
             
             <div className="carousel-thumbnails">
               <Slider ref={thumbnailSlider} {...thumbnailSettings}>
-                {images.slice(1).map((image, index) => (
+                {images.slice(1).map((media, index) => (
                   <div 
                     key={index} 
                     className={`thumbnail-slide ${currentSlide === index ? 'active' : ''}`}
@@ -172,11 +194,20 @@ const Project = () => {
                       }
                     }}
                   >
-                    <img 
-                      src={image} 
-                      alt={`Thumbnail ${index + 1}`}
-                      className="thumbnail-image"
-                    />
+                    {media.type === 'video' ? (
+                      <video 
+                        src={media.src}
+                        className="thumbnail-image"
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <img 
+                        src={media.src} 
+                        alt={`Thumbnail ${index + 1}`}
+                        className="thumbnail-image"
+                      />
+                    )}
                   </div>
                 ))}
               </Slider>
@@ -187,7 +218,7 @@ const Project = () => {
           <div className="project-sidebar">
             <div className="game-box-art">
               <img 
-                src={images[0]} 
+                src={images[0].src} 
                 alt={`${project.title} logo`}
                 className="project-logo"
               />
