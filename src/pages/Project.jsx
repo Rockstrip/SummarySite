@@ -23,12 +23,14 @@ const Project = () => {
       const extensions = ['jpg', 'png', 'webp', 'gif', 'mp4'];
       
       // Load logo first
+      for (const ext of extensions) {
       try {
-        const logoModule = await import(`../assets/Portfolio/${projectTitle}/logo.jpg`);
+        const logoModule = await import(`../assets/Portfolio/${projectTitle}/logo.${ext}`);
         media.push({ type: 'image', src: logoModule.default });
       } catch (error) {
         console.warn(`No logo found for ${projectTitle}`);
       }
+    }
 
       // Keep trying to load numbered media until one fails
       let mediaIndex = 1;
