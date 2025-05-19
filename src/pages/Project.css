@@ -191,7 +191,7 @@
 .project-description,
 .platform-links {
   border-radius: 4px;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   border: 1px solid #555;
   background-color: #333;
 }
@@ -200,7 +200,6 @@
 .platform-links h2 {
   color: #dab900;
   font-size: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .description-content {
@@ -211,14 +210,12 @@
 
 .links-grid {
   display: grid;
-  gap: 1rem;
 }
 
 .platform-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
   background: linear-gradient(to right, #dab900, #c4a600);
   color: #1a1a1a;
   text-decoration: none;
@@ -228,7 +225,6 @@
 
 .platform-link:hover {
   background: linear-gradient(to right, #f4d000, #dab900);
-  transform: translateY(-1px);
 }
 
 /* Carousel Navigation */
@@ -290,7 +286,7 @@
 
   .project-description,
   .platform-links {
-    padding: 1.5rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
   }
 }
 
