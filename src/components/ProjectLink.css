@@ -1,0 +1,51 @@
+.project-link-tag {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 180px;
+  background: #1a1a1a;
+  color: #cccccc;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.6em 1em 0.6em 0.9em;
+  border-radius: 4px;
+  border: 1px solid #232323;
+  margin-bottom: 6px;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.project-link-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.15em;
+  color: #dab900;
+  margin-right: 0.8em;
+  min-width: 22px;
+  justify-content: center;
+}
+
+.project-link-label {
+  flex: 1;
+  text-align: left;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-link-tag:hover, .project-link-tag:focus {
+  background: #232323;
+  color: #ffd700;
+  border-color: #dab900;
+}
+
+.project-link-tag:hover .project-link-icon,
+.project-link-tag:focus .project-link-icon {
+  color: #ffd700;
+}
+
+.project-link-tag:active {
+  background: #2d2d2d;
+} 

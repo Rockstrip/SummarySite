@@ -430,4 +430,24 @@
   .carousel-thumbnails {
     height: calc(72px * 9/16);
   }
+}
+
+.project-detailed-description-block {
+  border-radius: 4px;
+  padding: 2rem;
+  border: 1px solid #555;
+  background-color: #333;
+  margin-top: 2rem;
+}
+
+.project-detailed-description-block h2 {
+  color: #dab900;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-detailed-description-block .description-content {
+  color: #ffffff;
+  line-height: 1.8;
+  font-size: 1.1rem;
 } 

@@ -12,7 +12,8 @@ export const projects = [
     "video": true,
     "links": [
       { "name": "Website", "url": "https://samuraiwarlords.com/" }
-  ]
+  ],
+    "myRole": "Unity Developer & Multiplayer Integration"
   },
   {
       "title": "Samurai Swords Store",
@@ -29,7 +30,8 @@ export const projects = [
       { "name": "Website", "url": "https://samuraiswords.store/" },
       { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.cms.SamuraiSword" },
       { "name": "App Store", "url": "https://apps.apple.com/us/app/samurai-swords-store/id1321910145" }
-  ]
+  ],
+    "myRole": "Unity Developer & API Integration"
   },
   {
       "title": "Haunted Houses",
@@ -38,13 +40,14 @@ export const projects = [
       "publisher": "Lumighost Ltd.",
       "tags": ["Unity3D", "API", "UI", "Enemy AI", "Procedural Generator", "Custom Shaders", "Light Baking"],
       "shortDescription": "Shooter with dungeon generation, unique to each match. Developed for Lumighost Ltd.",
-      "detailedDescription": "Welcome to the exciting world of Haunted Houses, our own crypto game! It’s a game where you should haunt ghosts in different locations. Haunted Houses is presented in a first-person shooter mode with adventure and RPG genre elements. The player controls his character using a touch gamepad (mobile) or keyboard and mouse (PC).\nYou can play in different locations and gradually move to more complex levels. The main goal is to hunt ghosts and to catch them more. Everyday you have an opportunity to get in the lucky ones ranking and earn by playing. In order to win you should outwit the competition, get smarter and faster. But just as much more interesting!\nWe’ve launched a game where players get into a competitive environment where they should be more agile and swift than rivals. It is this factor that contributes to an increase the interest and excitement of players, as well as increases session duration and helps to develop an in-game economy. Every day, a daily rating will be formed, which you can get into if you catch more ghosts than the rest, and pass the levels more successfully. Nobody can stop you because the results of the game will depend on you.Show everyone who’s the best ghost hunter around here!The \ngame with P2E mechanics and it’s based on the own $LUMIGHOST Token. It’s a prime example of our blockchain game development.\nNFT integration is planned in the nearest future.",
+      "detailedDescription": "Welcome to the exciting world of Haunted Houses, our own crypto game! It's a game where you should haunt ghosts in different locations. Haunted Houses is presented in a first-person shooter mode with adventure and RPG genre elements. The player controls his character using a touch gamepad (mobile) or keyboard and mouse (PC).\nYou can play in different locations and gradually move to more complex levels. The main goal is to hunt ghosts and to catch them more. Everyday you have an opportunity to get in the lucky ones ranking and earn by playing. In order to win you should outwit the competition, get smarter and faster. But just as much more interesting!\nWe've launched a game where players get into a competitive environment where they should be more agile and swift than rivals. It is this factor that contributes to an increase the interest and excitement of players, as well as increases session duration and helps to develop an in-game economy. Every day, a daily rating will be formed, which you can get into if you catch more ghosts than the rest, and pass the levels more successfully. Nobody can stop you because the results of the game will depend on you.Show everyone who's the best ghost hunter around here!The \ngame with P2E mechanics and it's based on the own $LUMIGHOST Token. It's a prime example of our blockchain game development.\nNFT integration is planned in the nearest future.",
       "screenshotsExtension": "webp",
       "screenshots": [],
     "video": false,
     "links": [
       { "name": "Website", "url": "https://lumighost.com/product/haunted-houses/" }
-  ]
+  ],
+    "myRole": "Unity Developer & Blockchain Integrator"
   },
 
   {
@@ -58,7 +61,8 @@ export const projects = [
       "screenshotsExtension": "jpg",
       "screenshots": [],
     "video": false,
-    "links": []
+    "links": [],
+    "myRole": "Unity Developer & API Integration"
   },
   {
       "title": "RudderStack",
@@ -73,7 +77,8 @@ export const projects = [
     "video": false,
     "links": [
       { "name": "Website", "url": "https://www.rudderstack.com/" }
-    ]
+    ],
+    "myRole": "Unity Developer & SDK Author"
   },
   {
       "title": "DeltaP3",
@@ -86,7 +91,8 @@ export const projects = [
       "screenshotsExtension": "jpg",
       "screenshots": [],
     "video": false,
-    "links": []
+    "links": [],
+    "myRole": "Unity Developer"
   },
 
   {
@@ -102,7 +108,8 @@ export const projects = [
     "video": false,
     "links": [
       { "name": "Github", "url": "https://github.com/GrayBearLogic/Beaver-Lumberjack" }
-    ]
+    ],
+    "myRole": "Unity Developer"
   },
   {
       "title": "Heroes Auto Battle",
@@ -117,7 +124,8 @@ export const projects = [
     "video": false,
     "links": [
       { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.eg.autobattlehero" }
-    ]
+    ],
+    "myRole": "Unity Developer"
   },
   {
       "title": "Jiggler",
@@ -132,7 +140,8 @@ export const projects = [
     "video": false,
     "links": [
       { "name": "Github", "url": "https://github.com/GrayBearLogic/Jiggler" }
-    ]
+    ],
+    "myRole": "Unity Developer"
   },
 
   {
@@ -146,7 +155,8 @@ export const projects = [
     "screenshotsExtension": "jpg",
     "screenshots": [],
     "video": false,
-    "links": []
+    "links": [],
+    "myRole": "Unity Developer"
   },
   {
     "title": "Honey Cut",
@@ -159,7 +169,8 @@ export const projects = [
     "screenshotsExtension": "jpg",
     "screenshots": [],
     "video": "<source src=\"Resources/Portfolio/Honey Cut/gameplay.mp4\" type=\"video/mp4\">",
-    "links": []
+    "links": [],
+    "myRole": "Unity Developer"
   },
   {
     "title": "iBall",
@@ -172,7 +183,8 @@ export const projects = [
     "screenshotsExtension": "jpg",
     "screenshots": [],
     "video": false,
-    "links": []
+    "links": [],
+    "myRole": "Unity Developer & Multiplayer Integration"
   },
 
   {
@@ -188,7 +200,8 @@ export const projects = [
     "video": false,
     "links": [
       { "name": "Website", "url": "https://www.klee.games/" }
-    ]
+    ],
+    "myRole": "Unity Developer & Blockchain Integrator"
   },
   {
     "title": "Magic Swamp",
@@ -203,7 +216,8 @@ export const projects = [
     "video": false,
     "links": [
       { "name": "App Store", "url": "https://apps.apple.com/us/app/magic-swamp/id6443608622" },
-  ]
+  ],
+    "myRole": "Unity Developer"
   },
   {
       "title": "Shio",
@@ -220,7 +234,8 @@ export const projects = [
       { "name": "App Store", "url": "https://apps.apple.com/us/app/shio-hashtag-queens-superhero/id6445946482" },
       { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.robodrone.shio.hashtag.queen.superhero.runner" }
 
-    ]
+    ],
+    "myRole": "Unity Developer & Multiplayer Integration"
   },
   {
       "title": "Mazer Minotazer",
@@ -235,6 +250,7 @@ export const projects = [
     "video": false,
     "links": [
       { "name": "Github", "url": "https://github.com/Rockstrip/MazerMinotazer" }
-    ]
+    ],
+    "myRole": "Unity Developer"
   }
 ]
