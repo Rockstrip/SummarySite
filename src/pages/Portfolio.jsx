@@ -1,27 +1,27 @@
 import { useState, useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from './projects.js';
-import { getAllProjectImages } from '../utils/getDriveFiles';
+import { getAllProjectLogos } from '../utils/drive.js';
 import './Portfolio.css';
 
 const Portfolio = () => {
-  const [images, setImages] = useState({});
+  const [logos, setLogos] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const loadImages = async () => {
-      setIsLoading(true);
+    const loadLogos = async () => {
       try {
-        const all = await getAllProjectImages(); // ❗️ Один раз
-        setImages(all);
+        const fetchedLogos = await getAllProjectLogos();
+        console.log(fetchedLogos);
+        setLogos(fetchedLogos);
       } catch (err) {
-        console.error('Error loading project images:', err);
+        console.error('Error loading project logos:', err);
       } finally {
         setIsLoading(false);
       }
     };
 
-    loadImages();
+    loadLogos();
   }, []);
 
   return (
@@ -32,7 +32,7 @@ const Portfolio = () => {
           <ProjectCard
             key={project.title}
             project={project}
-            image={images[project.title]}
+            image={logos[project.title]}
             isImageLoading={isLoading}
           />
         ))}

@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { projects } from './projects.js';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -11,6 +11,59 @@ import AndroidIcon from '../assets/Icons/Links/android.svg?react';
 import WebsiteIcon from '../assets/Icons/Links/website.svg?react';
 import GithubIcon from '../assets/Icons/Links/github.svg?react';
 import { trackEvent } from '../mixpanel';
+import { getAllProjectMedia } from '../utils/drive';
+
+const mainSettings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  beforeChange: (current, next) => setCurrentSlide(next)
+};
+const thumbnailSettings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 8,
+  slidesToScroll: 1,
+  swipeToSlide: true,
+  focusOnSelect: false,
+  arrows: false,
+  variableWidth: true,
+  draggable: true,
+  useCSS: true,
+  useTransform: false,
+  beforeChange: (current, next) => {
+    if (mainSlider.current) {
+      mainSlider.current.slickGoTo(next);
+    }
+  },
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 6
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 4
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3
+      }
+    }
+  ]
+};
+
+
 
 const Project = () => { 
   const { projectId } = useParams();
@@ -23,63 +76,6 @@ const Project = () => {
   const thumbnailSlider = useRef(null);
   const videoIcon = '../assets/Icons/video.svg';
 
-  useEffect(() => { 
-    if (project) {
-    trackEvent(`Project ${project.title} viewed`);
-    }
-  }, [project]);
-
-  const loadProjectImages = useCallback(async (projectTitle) => {
-    setLoading(true);
-    try {
-      const media = [];
-      const extensions = ['jpg', 'png', 'webp', 'gif', 'mp4'];
-      
-      // Load logo first
-      for (const ext of extensions) {
-      try {
-        const logoModule = await import(`../assets/Portfolio/${projectTitle}/logo.${ext}`);
-        media.push({ type: 'image', src: logoModule.default });
-      } catch (error) {
-        console.warn(`No logo found for ${projectTitle}`);
-      }
-    }
-
-      // Keep trying to load numbered media until one fails
-      let mediaIndex = 1;
-      while (true) {
-        let mediaLoaded = false;
-        
-        // Try each extension
-        for (const ext of extensions) {
-          try {
-            const mediaModule = await import(`../assets/Portfolio/${projectTitle}/${mediaIndex}.${ext}`);
-            media.push({ 
-              type: ext === 'mp4' ? 'video' : 'image',
-              src: mediaModule.default 
-            });
-            mediaLoaded = true;
-            break;
-          } catch (error) {
-            continue;
-          }
-        }
-        
-        if (!mediaLoaded) break;
-        mediaIndex++;
-      }
-
-      setImages(media.length > 0 
-        ? media 
-        : [{ type: 'image', src: "https://placehold.co/1200x600/EEE/31343C?font=lora&text=No+Image" }]);
-    } catch (error) {
-      console.warn(`Error loading media for ${projectTitle}:`, error);
-      setImages([{ type: 'image', src: "https://placehold.co/1200x600/EEE/31343C?font=lora&text=No+Image" }]);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
   useEffect(() => {
     const foundProject = projects.find(
       p => p.title === decodeURIComponent(projectId)
@@ -91,59 +87,27 @@ const Project = () => {
     }
 
     setProject(foundProject);
-    loadProjectImages(foundProject.title);
-  }, [projectId, navigate, loadProjectImages]);
+  }, [projectId, navigate]);
 
-  const mainSettings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    beforeChange: (current, next) => setCurrentSlide(next)
-  };
+  useEffect(() => {
+    if (!project) return;
 
-  const thumbnailSettings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 8,
-    slidesToScroll: 1,
-    swipeToSlide: true,
-    focusOnSelect: false,
-    arrows: false,
-    variableWidth: true,
-    draggable: true,
-    useCSS: true,
-    useTransform: false,
-    beforeChange: (current, next) => {
-      if (mainSlider.current) {
-        mainSlider.current.slickGoTo(next);
+    trackEvent(`Project ${project.title} viewed`);
+
+    const loadImages = async () => {
+      setLoading(true);
+      try {
+        const media = await getAllProjectMedia(project.title);
+        setImages(media);
+      } catch (err) {
+        console.error('Error loading project images:', err);
+      } finally {
+        setLoading(false);
       }
-    },
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 6
-        }
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 4
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3
-        }
-      }
-    ]
-  };
+    };
+
+    loadImages();
+  }, [project]);
 
   if (!project || loading) {
     return (

@@ -29,15 +29,14 @@ const ProjectCard = ({ project, image, isImageLoading }) => {
     });
   };
 
-  const imageUrl = image?.directLink || placeholderUrl;
-
+  const imageUrl = image || placeholderUrl;
   return (
     <div className="projectCard">
       <div className={`projectCard-image-container ${isImageLoading ? 'loading' : ''}`}>
         <img 
           src={imageUrl}
-          alt={project.title}
-          className="projectCard-image"
+          alt={project.title || "Project preview"}
+          className={`projectCard-image ${isImageLoading ? 'image-loading' : ''}`}
         />
       </div>
       <div className="projectCard-content">
