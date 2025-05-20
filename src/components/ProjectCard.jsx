@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import './ProjectCard.css';
 import ProjectLink from './ProjectLink';
 import AppleIcon from '../assets/Icons/Links/apple.svg?react';
@@ -7,37 +6,12 @@ import AndroidIcon from '../assets/Icons/Links/android.svg?react';
 import WebsiteIcon from '../assets/Icons/Links/website.svg?react';
 import GithubIcon from '../assets/Icons/Links/github.svg?react';
 
-const ProjectCard = ({ project }) => {
-  const [imageUrl, setImageUrl] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+const placeholderUrl = "https://placehold.co/600x400/1a1a1a/2a2a2a?font=lora&text=?&color=black";
 
-  useEffect(() => {
-    const loadImage = async () => {
-      setIsLoading(true);
-      const extensions = ['jpg', 'png', 'webp'];
-      
-      for (const ext of extensions) {
-        try {
-          const imageModule = await import(`../assets/Portfolio/${project.title}/logo.${ext}`);
-          setImageUrl(imageModule.default);
-          setIsLoading(false);
-          return; // Exit if successful
-        } catch (error) {
-          continue; // Try next extension
-        }
-      }
-      
-      // If no image was found, use placeholder
-      console.warn(`Could not load logo for ${project.title}`);
-      setImageUrl("https://placehold.co/600x400/EEE/31343C?font=lora&text=?");
-      setIsLoading(false);
-    };
-    loadImage();
-  }, [project.title]);
-
+const ProjectCard = ({ project, image, isImageLoading }) => {
   const getProjectLinks = () => {
     if (!project.links) return [];
-    
+
     return project.links.map(link => {
       let Icon = WebsiteIcon;
       if (link.url.includes('apps.apple.com')) {
@@ -47,7 +21,7 @@ const ProjectCard = ({ project }) => {
       } else if (link.url.includes('github.com')) {
         Icon = GithubIcon;
       }
-      
+
       return {
         ...link,
         Icon
@@ -55,16 +29,16 @@ const ProjectCard = ({ project }) => {
     });
   };
 
+  const imageUrl = image?.directLink || placeholderUrl;
+
   return (
     <div className="projectCard">
-      <div className={`projectCard-image-container ${isLoading ? 'loading' : ''}`}>
-        {imageUrl && (
-          <img 
-            src={imageUrl}
-            alt={project.title}
-            className="projectCard-image"
-          />
-        )}
+      <div className={`projectCard-image-container ${isImageLoading ? 'loading' : ''}`}>
+        <img 
+          src={imageUrl}
+          alt={project.title}
+          className="projectCard-image"
+        />
       </div>
       <div className="projectCard-content">
         <h3>{project.title}</h3>
@@ -95,4 +69,4 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-export default ProjectCard; 
+export default ProjectCard;

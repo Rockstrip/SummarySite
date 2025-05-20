@@ -10,8 +10,9 @@ import AppleIcon from '../assets/Icons/Links/apple.svg?react';
 import AndroidIcon from '../assets/Icons/Links/android.svg?react';
 import WebsiteIcon from '../assets/Icons/Links/website.svg?react';
 import GithubIcon from '../assets/Icons/Links/github.svg?react';
+import { trackEvent } from '../mixpanel';
 
-const Project = () => {
+const Project = () => { 
   const { projectId } = useParams();
   const navigate = useNavigate();
   const [project, setProject] = useState(null);
@@ -20,6 +21,13 @@ const Project = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const mainSlider = useRef(null);
   const thumbnailSlider = useRef(null);
+  const videoIcon = '../assets/Icons/video.svg';
+
+  useEffect(() => { 
+    if (project) {
+    trackEvent(`Project ${project.title} viewed`);
+    }
+  }, [project]);
 
   const loadProjectImages = useCallback(async (projectTitle) => {
     setLoading(true);
@@ -200,7 +208,11 @@ const Project = () => {
                         mainSlider.current.slickGoTo(index);
                       }
                     }}
+                    style={{ position: 'relative' }}
                   >
+                    {media.type === 'video' && (
+                      <img src={videoIcon} alt="video" style={{ position: 'absolute', top: 6, left: 6, width: 22, height: 22, zIndex: 2, background: 'rgba(26,26,26,0.7)', borderRadius: 4, padding: 2 }} />
+                    )}
                     {media.type === 'video' ? (
                       <video 
                         src={media.src}
