@@ -31,7 +31,7 @@
     "developer": "Artur Kashuba",
     "publisher": "Lumighost Ltd.",
     "tags": ["Unity3D", "API", "UI", "Enemy AI", "Procedural Generator", "Custom Shaders", "Light Baking"],
-    "shortDescription": "Shooter with dungeon generation, unique to each match. Developed for Lumighost Ltd.",
+    "shortDescription": "Competitive ghost-hunting FPS with Custom Light System, Dungeon Generation, and Blockchain Rewards",
     "links": [
       { "name": "Website", "url": "https://lumighost.com/product/haunted-houses/" }
     ]

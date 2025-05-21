@@ -3,6 +3,7 @@
   justify-content: space-between;
   gap: 20px;
   margin-top: 20px;
+  width: 1000px;
 }
 
 form, .contact-info {
@@ -57,6 +58,7 @@ form button:hover {
 }
 
 .contact-info {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;

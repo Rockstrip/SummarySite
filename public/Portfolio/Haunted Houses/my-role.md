@@ -1,0 +1,5 @@
+- 🧠 Designing and implementing **procedural level generators** for dynamic haunted environments  
+- 👻 Creating **custom shaders** to visualize ethereal ghost entities and eerie visual effects  
+- 💡 Engineering a **unique lighting system** with real-time candlelight, torches, and moonlight behaviors  
+- 📱 Developing **multi-platform input systems** for mobile (touch) and PC (keyboard & mouse)  
+- 🔗 Integrating **blockchain mechanics** and preparing the game for **NFT-based features**  
