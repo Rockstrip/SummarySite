@@ -1,5 +1,87 @@
 {
-  "001_Samurai Warlords": {
+  "Beaver Lumberjack": {
+    "0": "jpg",
+    "1": "jpg",
+    "2": "jpg",
+    "3": "jpg"
+  },
+  "DeltaP3": {
+    "0": "jpg",
+    "1": "jpg",
+    "2": "jpg",
+    "3": "jpg",
+    "4": "jpg"
+  },
+  "Flappy Center": {
+    "0": "jpg"
+  },
+  "Haunted Houses": {
+    "0": "webp",
+    "1": "webp",
+    "2": "webp",
+    "3": "webp",
+    "4": "webp"
+  },
+  "Heroes Auto Battle": {
+    "0": "jpg",
+    "1": "webp",
+    "2": "webp",
+    "3": "webp",
+    "4": "webp"
+  },
+  "Honey Cut": {
+    "0": "jpg",
+    "1": "jpg"
+  },
+  "iBall": {
+    "0": "jpg",
+    "1": "jpg",
+    "2": "jpg",
+    "3": "jpg",
+    "4": "jpg"
+  },
+  "Jiggler": {
+    "0": "webp",
+    "1": "webp",
+    "2": "webp",
+    "3": "webp"
+  },
+  "Klee Run": {
+    "0": "jpg",
+    "1": "jpg",
+    "2": "jpg",
+    "3": "jpg",
+    "4": "jpg"
+  },
+  "Magic Swamp": {
+    "0": "webp",
+    "1": "webp",
+    "2": "webp",
+    "3": "webp",
+    "4": "webp"
+  },
+  "Mazer Minotazer": {
+    "0": "jpg",
+    "1": "jpg"
+  },
+  "NFTicket": {
+    "0": "jpg"
+  },
+  "RudderStack": {
+    "0": "webp",
+    "1": "webp",
+    "2": "webp",
+    "3": "webp",
+    "4": "webp"
+  },
+  "Samurai Swords Store": {
+    "0": "jpg",
+    "1": "jpg",
+    "2": "jpg",
+    "3": "jpg",
+    "4": "jpg"
+  },
+  "Samurai Warlords": {
     "0": "jpg",
     "1": "mp4",
     "2": "jpg",
@@ -12,93 +94,11 @@
     "03": "jpg",
     "04": "jpg"
   },
-  "002_Samurai Swords Store": {
-    "0": "jpg",
-    "1": "jpg",
-    "2": "jpg",
-    "3": "jpg",
-    "4": "jpg"
-  },
-  "003_Haunted Houses": {
+  "Shio": {
     "0": "webp",
     "1": "webp",
     "2": "webp",
     "3": "webp",
     "4": "webp"
-  },
-  "004_NFTicket": {
-    "0": "jpg"
-  },
-  "005_RudderStack": {
-    "0": "webp",
-    "1": "webp",
-    "2": "webp",
-    "3": "webp",
-    "4": "webp"
-  },
-  "006_DeltaP3": {
-    "0": "jpg",
-    "1": "jpg",
-    "2": "jpg",
-    "3": "jpg",
-    "4": "jpg"
-  },
-  "007_Beaver Lumberjack": {
-    "0": "jpg",
-    "1": "jpg",
-    "2": "jpg",
-    "3": "jpg"
-  },
-  "008_Heroes Auto Battle": {
-    "0": "jpg",
-    "1": "webp",
-    "2": "webp",
-    "3": "webp",
-    "4": "webp"
-  },
-  "009_Jiggler": {
-    "0": "webp",
-    "1": "webp",
-    "2": "webp",
-    "3": "webp"
-  },
-  "010_Flappy Center": {
-    "0": "jpg"
-  },
-  "011_Honey Cut": {
-    "0": "jpg",
-    "1": "jpg"
-  },
-  "012_iBall": {
-    "0": "jpg",
-    "1": "jpg",
-    "2": "jpg",
-    "3": "jpg",
-    "4": "jpg"
-  },
-  "013_Klee Run": {
-    "0": "jpg",
-    "1": "jpg",
-    "2": "jpg",
-    "3": "jpg",
-    "4": "jpg"
-  },
-  "014_Magic Swamp": {
-    "0": "webp",
-    "1": "webp",
-    "2": "webp",
-    "3": "webp",
-    "4": "webp"
-  },
-  "015_Shio": {
-    "0": "webp",
-    "1": "webp",
-    "2": "webp",
-    "3": "webp",
-    "4": "webp"
-  },
-  "016_Mazer Minotazer": {
-    "0": "jpg",
-    "1": "jpg"
   }
 }

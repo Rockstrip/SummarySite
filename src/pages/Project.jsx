@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
-import { projects } from './projects.js';
+import projects from '../utils/projects.json';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -152,20 +152,11 @@ const Project = () => {
                   >
                     {media.type === 'video' ? (
                       <div className="thumbnail-video">
-                      <video
-                        src={media.src}
-                        className="thumbnail-image"
-                        muted
-                        playsInline
-                      />
+                      <video src={media.src} className="thumbnail-image" muted playsInline />
                       <div className="thumbnail-video-overlay">
-                        <img
-                          src={videoIcon}
-                          alt="video icon"
-                          className="thumbnail-video-icon"
-                        />
+                        <img src={videoIcon} alt="video icon" className="thumbnail-video-icon" />
                       </div>
-                    </div>                  
+                    </div>
                     ) : (
                       <img
                         src={media.src}

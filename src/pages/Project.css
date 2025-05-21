@@ -126,11 +126,14 @@
 
 .project-logo {
   width: 100%;
-  height: auto;
+  aspect-ratio: 3/2;
+  object-fit: cover;
   display: block;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
+
+
 
 .game-brief {
   color: #cccccc;

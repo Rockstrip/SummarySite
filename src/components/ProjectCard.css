@@ -1,12 +1,12 @@
 .projectCard {
-  background: #1a1a1a;
-  border-radius: 8px;
-  width: 320px;
-  height: 400px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 320px;
+  height: 400px; /* фіксована висота */
+  background: #1a1a1a;
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .projectCard:hover {
@@ -15,11 +15,13 @@
 
 .projectCard-image-container {
   width: 100%;
-  aspect-ratio: 3/2;
-  background: transparent;
-  position: relative;
+  aspect-ratio: 3 / 2; /* Задано пропорції */
+  flex-shrink: 0; /* Не стискаємо картинку */
   overflow: hidden;
+  position: relative;
+  background: transparent;
 }
+
 
 .projectCard-image-container.loading {
   background: transparent;
@@ -29,9 +31,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
-  transition: opacity 0.3s ease;
 }
+
+
 
 .projectCard-image-container.loading .projectCard-image {
   opacity: 0;
@@ -39,9 +41,10 @@
 
 .projectCard-content {
   padding: 1rem;
-  flex: 1;
   display: flex;
   flex-direction: column;
+  flex-grow: 1; /* Займає весь доступний простір */
+  overflow: hidden;
 }
 
 .projectCard h3 {
@@ -60,15 +63,15 @@
 }
 
 .projectCard-description {
-  color: #cccccc;
-  line-height: 1.4;
-  flex: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  flex-grow: 1; /* Текст розтягується і займає весь доступний простір */
   overflow: hidden;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* обмеження рядків */
+  -webkit-box-orient: vertical;
+  color: #cccccc;
   font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .projectCard-tags {
@@ -86,10 +89,10 @@
 }
 
 .projectCard-links {
+  margin-top: auto; /* Прикріпити до низу */
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 1rem;
 }
 
 .projectCard-links-left {

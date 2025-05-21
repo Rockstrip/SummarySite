@@ -1,43 +1,51 @@
+import phoneIcon from '../assets/Icons/Social/phone.svg';
+import emailIcon from '../assets/Icons/Social/email.svg';
+import githubIcon from '../assets/Icons/Social/github.svg';
+import linkedInIcon from '../assets/Icons/Social/linkedIn.svg';
+import skypeIcon from '../assets/Icons/Social/skype.svg';
+import telegramIcon from '../assets/Icons/Social/telegram.svg';
+import upworkIcon from '../assets/Icons/Social/upwork.svg';
 import './Contact.css';
 
 const Contact = () => {
   const contactInfo = [
     {
-      icon: '/Resources/Icons/Social/phone.svg',
+      icon: phoneIcon,
       text: '+1 (781) 964-7620',
       link: 'tel:+17819647620'
     },
     {
-      icon: '/Resources/Icons/Social/email.svg',
+      icon: emailIcon,
       text: 'artes5kgc@gmail.com',
       link: 'mailto:artes5kgc@gmail.com'
     },
     {
-      icon: '/Resources/Icons/Social/github.svg',
+      icon: githubIcon,
       text: 'GitHub',
       link: 'https://github.com/Rockstrip'
     },
     {
-      icon: '/Resources/Icons/Social/linkedIn.svg',
+      icon: linkedInIcon,
       text: 'LinkedIn',
       link: 'https://www.linkedin.com/in/artur-kashuba-556b00192/'
     },
     {
-      icon: '/Resources/Icons/Social/skype.svg',
+      icon: skypeIcon,
       text: 'Skype',
       link: 'https://join.skype.com/invite/EgwpqlDLFxxX'
     },
     {
-      icon: '/Resources/Icons/Social/telegram.svg',
+      icon: telegramIcon,
       text: 'Telegram',
       link: 'https://t.me/rockstrip'
     },
     {
-      icon: '/Resources/Icons/Social/upwork.svg',
+      icon: upworkIcon,
       text: 'Upwork',
       link: 'https://www.upwork.com/freelancers/~01c91a5d470285de31'
     }
   ];
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();

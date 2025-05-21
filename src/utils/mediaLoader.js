@@ -1,86 +1,68 @@
 import fileMap from './fileMap.json';
-
-/**
- * Створюємо мапу чистих назв проектів -> повні імена з префіксом
- */
-const projectNameMap = {};
-for (const fullName in fileMap) {
-  // Припускаємо формат: "001_Samurai Warlords"
-  // Відділяємо префікс і чисту назву через _
-  const cleanName = fullName.replace(/^\d+_/, '').trim();
-  projectNameMap[cleanName] = fullName;
-}
-
-/**
- * Отримати повне ім'я проекту з префіксом за чистим ім'ям
- * @param {string} cleanName
- * @returns {string | undefined}
- */
-function getFullProjectName(cleanName) {
-  return projectNameMap[cleanName];
-}
+import projects from './projects.json';
 
 /**
  * Отримати URL до конкретного медіафайлу
+ * @param {string} projectName
+ * @param {string | number} index
+ * @returns {string | null}
  */
-export function getMedia(project, index) {
-  const fullName = getFullProjectName(project);
-  if (!fullName) return null;
-
-  const ext = fileMap?.[fullName]?.[index];
+export function getMedia(projectName, index) {
+  const ext = fileMap?.[projectName]?.[index];
   if (!ext) return null;
-  return `/Portfolio/${fullName}/${index}.${ext}`;
+  return `/Portfolio/${projectName}/${index}.${ext}`;
 }
 
 /**
  * Отримати всі шляхи до медіафайлів проєкту (відсортовані по індексу)
+ * @param {string} projectName
+ * @returns {Array<{ type: string, src: string, id?: string }>}
  */
-export function getAllMedia(project) {
-    const fullName = getFullProjectName(project);
-    if (!fullName) return [];
-  
-    const entries = fileMap[fullName];
-    if (!entries) return [];
-  
-    const result = Object.entries(entries)
-      .sort(([a], [b]) => Number(a) - Number(b))
-      .map(([index, ext]) => {
-        const isVideo = ext === 'mp4';
-  
-        return {
-          type: isVideo ? 'video' : 'image',
-          src: `/Portfolio/${fullName}/${index}.${ext}`,
-          id: isVideo ? `${fullName}/${index}` : undefined // if needed for thumbnails
-        };
-      });
-  
-    return result;
-  }
-  
+export function getAllMedia(projectName) {
+  const entries = fileMap?.[projectName];
+  if (!entries) return [];
+
+  return Object.entries(entries)
+    .sort(([a], [b]) => Number(a) - Number(b))
+    .map(([index, ext]) => {
+      const isVideo = ext === 'mp4';
+      return {
+        type: isVideo ? 'video' : 'image',
+        src: `/Portfolio/${projectName}/${index}.${ext}`,
+        id: isVideo ? `${projectName}/${index}` : undefined
+      };
+    });
+}
 
 /**
- * Отримати шляхи до всіх логотипів (0.[ext]) з усіх проєктів
- * Повертає { project: cleanName, url }
+ * Повертає масив проектів із доданим шляхом до логотипу
+ * @returns {Array} масив об'єктів проектів з полем logoUrl
  */
-export function getAllLogos() {
-    const logos = {};
-  
-    Object.entries(fileMap).forEach(([fullName, files]) => {
-      const ext = files['0']; // перевіряємо чи є логотип (файл з ім’ям "0")
-      if (!ext) return;
-  
-      const cleanName = fullName.replace(/^\d+_/, '').trim();
-      logos[cleanName] = `/Portfolio/${fullName}/0.${ext}`;
-    });
-  
-    console.log(logos);
-    return logos;
-  }
-  
-  
-  export function getAllProjectNames() {
-    return Object.keys(fileMap).map(fullName =>
-      fullName.replace(/^\d+_/, '').trim()
+export function GetPortfolio() {
+  return projects.map(project => {
+    // Знайти повне ім'я проекту у fileMap, яке відповідає project.title
+    const fullName = Object.keys(fileMap).find(fullName =>
+      fullName.replace(/^\d+_/, '').trim() === project.title
     );
-  }
-  
+
+    // Якщо знайшли, отримуємо розширення логотипу (файл 0)
+    const logoExt = fullName ? fileMap[fullName]['0'] : null;
+
+    // Формуємо URL логотипу, якщо є
+    const logoUrl = fullName && logoExt ? `/Portfolio/${fullName}/0.${logoExt}` : null;
+
+    return {
+      ...project,
+      logoUrl
+    };
+  });
+}
+
+
+/**
+ * Отримати список всіх назв проєктів з projects.json
+ * @returns {string[]}
+ */
+export function getAllProjectNames() {
+  return projects.map(p => p.title);
+}

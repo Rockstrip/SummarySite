@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
-import { getAllLogos } from '../utils/mediaLoader';
+import { GetPortfolio } from '../utils/mediaLoader';
 import './Portfolio.css';
 
 const Portfolio = () => {
-  const [logos, setLogos] = useState({});
+  const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const logosMap = getAllLogos();
-    console.log(logosMap);
-    setLogos(logosMap);
+    const portfolio = GetPortfolio();
+    console.log(portfolio);
+    setProjects(portfolio);
     setIsLoading(false);
   }, []);
 
@@ -18,11 +18,11 @@ const Portfolio = () => {
     <main>
       <h1 className="portfolio-title">My Portfolio</h1>
       <div className="portfolio-grid">
-        {Object.keys(logos).map((projectTitle) => (
+        {projects.map((project) => (
           <ProjectCard
-            key={projectTitle}
-            project={projectTitle}
-            image={logos[projectTitle]}
+            key={project.title}
+            project={project}
+            image={project.logoUrl}
             isImageLoading={isLoading}
           />
         ))}
