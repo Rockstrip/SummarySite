@@ -12,16 +12,19 @@ function App() {
     <Router>
       <div className="app">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/project/:projectId" element={<Project />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/project/:projectId" element={<Project />} />
+          </Routes>
+        </main>
         <Footer />
       </div>
     </Router>
   );
 }
+
 
 export default App;

@@ -1,3 +1,18 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app main {
+  flex: 1;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,7 +41,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* <-- змінив на початок */
   max-width: 1000px;
 }
 

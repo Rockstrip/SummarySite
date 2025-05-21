@@ -326,8 +326,6 @@
 .carousel-thumbnails .slick-track {
   display: flex;
   align-items: center;
-  margin-left: -4px;
-  margin-right: -4px;
   min-width: 100% !important;
 }
 
@@ -354,6 +352,43 @@
   outline: 2px solid transparent;
   outline-offset: -2px;
 }
+
+.thumbnail-video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.thumbnail-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.6;
+}
+
+.thumbnail-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* щоб не заважати клікам */
+}
+
+.thumbnail-video-icon {
+  width: 32px;
+  height: 32px;
+  opacity: 0.9;
+  user-select: none;
+}
+
 
 .thumbnail-slide.active .thumbnail-image {
   opacity: 1;

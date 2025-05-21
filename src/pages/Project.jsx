@@ -10,7 +10,7 @@ import AppleIcon from '../assets/Icons/Links/apple.svg?react';
 import AndroidIcon from '../assets/Icons/Links/android.svg?react';
 import WebsiteIcon from '../assets/Icons/Links/website.svg?react';
 import GithubIcon from '../assets/Icons/Links/github.svg?react';
-import videoIcon from '../assets/Icons/video.svg?react';
+import videoIcon from '../assets/Icons/video.svg';
 import { trackEvent } from '../mixpanel';
 import { getAllMedia } from '../utils/mediaLoader.js';
 // ... імпорти залишаються без змін
@@ -114,13 +114,12 @@ const Project = () => {
                 {images.slice(1).map((media, index) => (
                   <div key={index} className="carousel-slide">
                     {media.type === 'video' ? (
-                      <iframe
+                      <video
                         src={media.src}
-                        width="656"
-                        height="357"
-                        allowFullScreen
-                        title={`Video ${index + 1}`}
-                        className="project-video"
+                        className="project-carousel-image"
+                        controls
+                        playsInline
+                        muted
                       />
                     ) : (
                       <img
@@ -151,16 +150,30 @@ const Project = () => {
                     onClick={() => mainSlider.current?.slickGoTo(index)}
                     style={{ position: 'relative' }}
                   >
-                    <img
-                      src={
-                        media.type === 'video'
-                          ? `https://drive.google.com/thumbnail?id=${media.id}&sz=w1000`
-                          : media.src
-                      }
-                      alt={`Thumbnail ${index + 1}`}
-                      className="thumbnail-image"
-                    />
-                  </div>
+                    {media.type === 'video' ? (
+                      <div className="thumbnail-video">
+                      <video
+                        src={media.src}
+                        className="thumbnail-image"
+                        muted
+                        playsInline
+                      />
+                      <div className="thumbnail-video-overlay">
+                        <img
+                          src={videoIcon}
+                          alt="video icon"
+                          className="thumbnail-video-icon"
+                        />
+                      </div>
+                    </div>                  
+                    ) : (
+                      <img
+                        src={media.src}
+                        alt={`Thumbnail ${index + 1}`}
+                        className="thumbnail-image"
+                      />
+                    )}
+              </div>
                 ))}
               </Slider>
             </div>
