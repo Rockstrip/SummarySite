@@ -1,43 +1,18 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import './ProjectCard.css';
-import ProjectLink from './ProjectLink';
 import AppleIcon from '../assets/Icons/Links/apple.svg?react';
 import AndroidIcon from '../assets/Icons/Links/android.svg?react';
 import WebsiteIcon from '../assets/Icons/Links/website.svg?react';
 import GithubIcon from '../assets/Icons/Links/github.svg?react';
+import placeholder from '../assets/Icons/placeholder.svg?react';
 
-const ProjectCard = ({ project }) => {
-  const [imageUrl, setImageUrl] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const loadImage = async () => {
-      setIsLoading(true);
-      const extensions = ['jpg', 'png', 'webp'];
-      
-      for (const ext of extensions) {
-        try {
-          const imageModule = await import(`../assets/Portfolio/${project.title}/logo.${ext}`);
-          setImageUrl(imageModule.default);
-          setIsLoading(false);
-          return; // Exit if successful
-        } catch (error) {
-          continue; // Try next extension
-        }
-      }
-      
-      // If no image was found, use placeholder
-      console.warn(`Could not load logo for ${project.title}`);
-      setImageUrl("https://placehold.co/600x400/EEE/31343C?font=lora&text=?");
-      setIsLoading(false);
-    };
-    loadImage();
-  }, [project.title]);
+const ProjectCard = ({ project, image, isImageLoading }) => {
+  const title = typeof project === 'string' ? project : project.title || 'Untitled';
+  const shortDescription = typeof project === 'object' ? project.shortDescription || '' : '';
 
   const getProjectLinks = () => {
-    if (!project.links) return [];
-    
+    if (!project || typeof project !== 'object' || !project.links) return [];
+
     return project.links.map(link => {
       let Icon = WebsiteIcon;
       if (link.url.includes('apps.apple.com')) {
@@ -47,7 +22,7 @@ const ProjectCard = ({ project }) => {
       } else if (link.url.includes('github.com')) {
         Icon = GithubIcon;
       }
-      
+
       return {
         ...link,
         Icon
@@ -55,20 +30,22 @@ const ProjectCard = ({ project }) => {
     });
   };
 
+  const imageUrl = image || placeholder;
+
   return (
     <div className="projectCard">
-      <div className={`projectCard-image-container ${isLoading ? 'loading' : ''}`}>
-        {imageUrl && (
-          <img 
-            src={imageUrl}
-            alt={project.title}
-            className="projectCard-image"
-          />
-        )}
+      <div className={`projectCard-image-container ${isImageLoading ? 'loading' : ''}`}>
+        <img 
+          src={imageUrl}
+          alt={title}
+          className={`projectCard-image ${isImageLoading ? 'image-loading' : ''}`}
+        />
       </div>
       <div className="projectCard-content">
-        <h3>{project.title}</h3>
-        <p className="projectCard-description">{project.shortDescription}</p>
+        <h3>{title}</h3>
+        {shortDescription && (
+          <p className="projectCard-description">{shortDescription}</p>
+        )}
         <div className="projectCard-links">
           <div className="projectCard-links-left">
             {getProjectLinks().map((link) => (
@@ -85,7 +62,10 @@ const ProjectCard = ({ project }) => {
             ))}
           </div>
           <div className="projectCard-links-right">
-            <Link to={`/project/${encodeURIComponent(project.title)}`} className="projectCard-link">
+            <Link
+              to={`/project/${encodeURIComponent(title)}`}
+              className="projectCard-link"
+            >
               Learn More
             </Link>
           </div>
@@ -95,4 +75,4 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-export default ProjectCard; 
+export default ProjectCard;
