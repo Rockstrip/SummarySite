@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
 import './ProjectCard.css';
-import ProjectLink from './ProjectLink';
 import AppleIcon from '../assets/Icons/Links/apple.svg?react';
 import AndroidIcon from '../assets/Icons/Links/android.svg?react';
 import WebsiteIcon from '../assets/Icons/Links/website.svg?react';
 import GithubIcon from '../assets/Icons/Links/github.svg?react';
-
-const placeholderUrl = "https://placehold.co/600x400/1a1a1a/2a2a2a?font=lora&text=?&color=black";
+import placeholder from '../assets/Icons/placeholder.svg?react';
 
 const ProjectCard = ({ project, image, isImageLoading }) => {
+  const title = typeof project === 'string' ? project : project.title || 'Untitled';
+  const shortDescription = typeof project === 'object' ? project.shortDescription || '' : '';
+
   const getProjectLinks = () => {
-    if (!project.links) return [];
+    if (!project || typeof project !== 'object' || !project.links) return [];
 
     return project.links.map(link => {
       let Icon = WebsiteIcon;
@@ -29,19 +30,22 @@ const ProjectCard = ({ project, image, isImageLoading }) => {
     });
   };
 
-  const imageUrl = image || placeholderUrl;
+  const imageUrl = image || placeholder;
+
   return (
     <div className="projectCard">
       <div className={`projectCard-image-container ${isImageLoading ? 'loading' : ''}`}>
         <img 
           src={imageUrl}
-          alt={project.title || "Project preview"}
+          alt={title}
           className={`projectCard-image ${isImageLoading ? 'image-loading' : ''}`}
         />
       </div>
       <div className="projectCard-content">
-        <h3>{project.title}</h3>
-        <p className="projectCard-description">{project.shortDescription}</p>
+        <h3>{title}</h3>
+        {shortDescription && (
+          <p className="projectCard-description">{shortDescription}</p>
+        )}
         <div className="projectCard-links">
           <div className="projectCard-links-left">
             {getProjectLinks().map((link) => (
@@ -58,7 +62,10 @@ const ProjectCard = ({ project, image, isImageLoading }) => {
             ))}
           </div>
           <div className="projectCard-links-right">
-            <Link to={`/project/${encodeURIComponent(project.title)}`} className="projectCard-link">
+            <Link
+              to={`/project/${encodeURIComponent(title)}`}
+              className="projectCard-link"
+            >
               Learn More
             </Link>
           </div>

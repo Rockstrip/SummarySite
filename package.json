@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "generate-filemap": "node generateFileMap.js",
+    "dev": "npm run generate-filemap && vite",
+    "build": "npm run generate-filemap && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

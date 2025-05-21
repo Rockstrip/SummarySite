@@ -10,62 +10,12 @@ import AppleIcon from '../assets/Icons/Links/apple.svg?react';
 import AndroidIcon from '../assets/Icons/Links/android.svg?react';
 import WebsiteIcon from '../assets/Icons/Links/website.svg?react';
 import GithubIcon from '../assets/Icons/Links/github.svg?react';
+import videoIcon from '../assets/Icons/video.svg?react';
 import { trackEvent } from '../mixpanel';
-import { getAllProjectMedia } from '../utils/drive';
+import { getAllMedia } from '../utils/mediaLoader.js';
+// ... імпорти залишаються без змін
 
-const mainSettings = {
-  dots: false,
-  infinite: false,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  beforeChange: (current, next) => setCurrentSlide(next)
-};
-const thumbnailSettings = {
-  dots: false,
-  infinite: false,
-  speed: 500,
-  slidesToShow: 8,
-  slidesToScroll: 1,
-  swipeToSlide: true,
-  focusOnSelect: false,
-  arrows: false,
-  variableWidth: true,
-  draggable: true,
-  useCSS: true,
-  useTransform: false,
-  beforeChange: (current, next) => {
-    if (mainSlider.current) {
-      mainSlider.current.slickGoTo(next);
-    }
-  },
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 6
-      }
-    },
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 4
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 3
-      }
-    }
-  ]
-};
-
-
-
-const Project = () => { 
+const Project = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const [project, setProject] = useState(null);
@@ -74,7 +24,40 @@ const Project = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const mainSlider = useRef(null);
   const thumbnailSlider = useRef(null);
-  const videoIcon = '../assets/Icons/video.svg';
+
+  const mainSettings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    beforeChange: (_, next) => setCurrentSlide(next)
+  };
+
+  const thumbnailSettings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 8,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    focusOnSelect: false,
+    arrows: false,
+    variableWidth: true,
+    draggable: true,
+    useCSS: true,
+    useTransform: false,
+    beforeChange: (_, next) => {
+      mainSlider.current?.slickGoTo(next);
+    },
+    responsive: [
+      { breakpoint: 1200, settings: { slidesToShow: 6 }},
+      { breakpoint: 992, settings: { slidesToShow: 4 }},
+      { breakpoint: 768, settings: { slidesToShow: 3 }},
+    ]
+  };
 
   useEffect(() => {
     const foundProject = projects.find(
@@ -97,10 +80,10 @@ const Project = () => {
     const loadImages = async () => {
       setLoading(true);
       try {
-        const media = await getAllProjectMedia(project.title);
+        const media = await getAllMedia(project.title);
         setImages(media);
       } catch (err) {
-        console.error('Error loading project images:', err);
+        console.error('Error loading project media:', err);
       } finally {
         setLoading(false);
       }
@@ -119,31 +102,29 @@ const Project = () => {
 
   return (
     <main className="project-page">
-      {/* Top Section */}
       <div className="project-header">
         <h2 className="project-title">{project.title}</h2>
       </div>
 
-      {/* Main Content Area */}
       <div className="project-content">
-        {/* Banner and Sidebar Layout */}
         <div className="project-main-section">
-          {/* Left: Banner/Carousel Section */}
           <div className="project-banner">
             <div className="project-carousel-container">
               <Slider ref={mainSlider} {...mainSettings}>
                 {images.slice(1).map((media, index) => (
                   <div key={index} className="carousel-slide">
                     {media.type === 'video' ? (
-                      <video 
+                      <iframe
                         src={media.src}
-                        className="project-carousel-image"
-                        controls
-                        playsInline
+                        width="656"
+                        height="357"
+                        allowFullScreen
+                        title={`Video ${index + 1}`}
+                        className="project-video"
                       />
                     ) : (
-                      <img 
-                        src={media.src} 
+                      <img
+                        src={media.src}
                         alt={`${project.title} - Media ${index + 1}`}
                         className="project-carousel-image"
                       />
@@ -151,8 +132,8 @@ const Project = () => {
                   </div>
                 ))}
               </Slider>
-              {/* Overlay Notice */}
-              {project.notices && (
+
+              {project.notices?.length > 0 && (
                 <div className="project-notices">
                   {project.notices.map((notice, index) => (
                     <span key={index} className="notice-text">{notice}</span>
@@ -160,52 +141,41 @@ const Project = () => {
                 </div>
               )}
             </div>
-            
+
             <div className="carousel-thumbnails">
               <Slider ref={thumbnailSlider} {...thumbnailSettings}>
                 {images.slice(1).map((media, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className={`thumbnail-slide ${currentSlide === index ? 'active' : ''}`}
-                    onClick={() => {
-                      if (mainSlider.current) {
-                        mainSlider.current.slickGoTo(index);
-                      }
-                    }}
+                    onClick={() => mainSlider.current?.slickGoTo(index)}
                     style={{ position: 'relative' }}
                   >
-                    {media.type === 'video' && (
-                      <img src={videoIcon} alt="video" style={{ position: 'absolute', top: 6, left: 6, width: 22, height: 22, zIndex: 2, background: 'rgba(26,26,26,0.7)', borderRadius: 4, padding: 2 }} />
-                    )}
-                    {media.type === 'video' ? (
-                      <video 
-                        src={media.src}
-                        className="thumbnail-image"
-                        muted
-                        playsInline
-                      />
-                    ) : (
-                      <img 
-                        src={media.src} 
-                        alt={`Thumbnail ${index + 1}`}
-                        className="thumbnail-image"
-                      />
-                    )}
+                    <img
+                      src={
+                        media.type === 'video'
+                          ? `https://drive.google.com/thumbnail?id=${media.id}&sz=w1000`
+                          : media.src
+                      }
+                      alt={`Thumbnail ${index + 1}`}
+                      className="thumbnail-image"
+                    />
                   </div>
                 ))}
               </Slider>
             </div>
           </div>
 
-          {/* Right: Game Info Sidebar */}
           <div className="project-sidebar">
-            <div className="game-box-art">
-              <img 
-                src={images[0].src} 
-                alt={`${project.title} logo`}
-                className="project-logo"
-              />
-            </div>
+            {images[0]?.src && (
+              <div className="game-box-art">
+                <img
+                  src={images[0].src}
+                  alt={`${project.title} logo`}
+                  className="project-logo"
+                />
+              </div>
+            )}
 
             <div className="game-brief">
               <p>{project.shortDescription}</p>
@@ -216,7 +186,6 @@ const Project = () => {
                 <strong>Release Date:</strong>
                 <span>{project.releaseDate}</span>
               </div>
-              
               {project.publisher && (
                 <div className="metadata-item">
                   <strong>Publisher:</strong>
@@ -226,16 +195,14 @@ const Project = () => {
             </div>
 
             <div className="project-tags">
-              {project.tags.map(tag => (
+              {project.tags?.map(tag => (
                 <span key={tag} className="tag">{tag}</span>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
         <div className="project-details-section">
-          {/* Left: My Role */}
           <div className="project-description">
             <h2>My Role</h2>
             <div className="description-content">
@@ -243,20 +210,16 @@ const Project = () => {
             </div>
           </div>
 
-          {/* Right: Project Links */}
-          {project.links && project.links.length > 0 && (
+          {project.links?.length > 0 && (
             <div className="platform-links">
               <h2>Project Links</h2>
               <div className="links-grid">
                 {project.links.map(link => {
                   let Icon = WebsiteIcon;
-                  if (link.url.includes('apps.apple.com')) {
-                    Icon = AppleIcon;
-                  } else if (link.url.includes('play.google.com')) {
-                    Icon = AndroidIcon;
-                  } else if (link.url.includes('github.com')) {
-                    Icon = GithubIcon;
-                  }
+                  if (link.url.includes('apps.apple.com')) Icon = AppleIcon;
+                  else if (link.url.includes('play.google.com')) Icon = AndroidIcon;
+                  else if (link.url.includes('github.com')) Icon = GithubIcon;
+
                   return (
                     <a
                       key={link.url}
@@ -275,7 +238,6 @@ const Project = () => {
           )}
         </div>
 
-        {/* Project Detailed Description Block */}
         <div className="project-detailed-description-block">
           <h2>Project Detailed Description</h2>
           <div className="description-content">
@@ -287,4 +249,4 @@ const Project = () => {
   );
 };
 
-export default Project; 
+export default Project;
