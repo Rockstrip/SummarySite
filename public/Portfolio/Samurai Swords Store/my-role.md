@@ -1,0 +1,3 @@
+- 🔧 Developing **intuitive controls** for real-time rotation, zoom, and modification of swords  
+- 🚀 **Optimizing performance** across multiple platforms  
+- 🌄 Integrating **visually rich, immersive environments** to enhance the user experience

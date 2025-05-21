@@ -13,6 +13,8 @@ import GithubIcon from '../assets/Icons/Links/github.svg?react';
 import videoIcon from '../assets/Icons/video.svg';
 import { trackEvent } from '../mixpanel';
 import { getAllMedia } from '../utils/mediaLoader.js';
+import ReactMarkdown from 'react-markdown'; // імпорт бібліотеки
+
 // ... імпорти залишаються без змін
 
 const Project = () => {
@@ -24,6 +26,8 @@ const Project = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const mainSlider = useRef(null);
   const thumbnailSlider = useRef(null);
+  const [detailedDescriptionMarkdown, setDetailedDescriptionMarkdown] = useState('');
+  const [myRoleMarkdown, setMyRoleMarkdown] = useState('');
 
   const mainSettings = {
     dots: false,
@@ -71,6 +75,42 @@ const Project = () => {
 
     setProject(foundProject);
   }, [projectId, navigate]);
+
+  useEffect(() => {
+    if (!project) return;
+  
+    const fetchMarkdown = async () => {
+      try {
+        const response = await fetch(`/Portfolio/${project.title}/detailed-description.md`);
+        if (!response.ok) throw new Error('Markdown not found');
+        const text = await response.text();
+        setDetailedDescriptionMarkdown(text);
+      } catch (error) {
+        console.warn('No markdown file found:', error);
+        setDetailedDescriptionMarkdown(''); // fallback if needed
+      }
+    };
+  
+    fetchMarkdown();
+  }, [project]);
+  
+  useEffect(() => {
+    if (!project) return;
+  
+    const fetchMarkdown = async () => {
+      try {
+        const response = await fetch(`/Portfolio/${project.title}/my-role.md`);
+        if (!response.ok) throw new Error('Markdown not found');
+        const text = await response.text();
+        setMyRoleMarkdown(text);
+      } catch (error) {
+        console.warn('No markdown file found:', error);
+        setMyRoleMarkdown(''); // fallback if needed
+      }
+    };
+  
+    fetchMarkdown();
+  }, [project]);
 
   useEffect(() => {
     if (!project) return;
@@ -211,6 +251,9 @@ const Project = () => {
             <h2>My Role</h2>
             <div className="description-content">
               <p>{project.myRole}</p>
+              <div className="description-content markdown-body">
+                <ReactMarkdown>{myRoleMarkdown || 'No my role markdown available.'}</ReactMarkdown>
+              </div>
             </div>
           </div>
 
@@ -243,9 +286,8 @@ const Project = () => {
         </div>
 
         <div className="project-detailed-description-block">
-          <h2>Project Detailed Description</h2>
-          <div className="description-content">
-            <p>{project.detailedDescription || project.shortDescription}</p>
+          <div className="description-content markdown-body">
+            <ReactMarkdown>{detailedDescriptionMarkdown || 'No detailed description available.'}</ReactMarkdown>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@
     "developer": "Artur Kashuba",
     "publisher": "Samurai Warlords",
     "tags": ["Unity3D", "C#", "Multiplayer"],
-    "shortDescription": "Classic 3D chess game, with the feature: players can use katana, which was created in the SSS app.",
+    "shortDescription": "Multiplayer 3D chess game, set in feudal Japan with character customization and NFT integration",
     "links": [
       { "name": "Website", "url": "https://samuraiwarlords.com/" },
       { "name": "Account", "url": "https://samuraiwarlordsstakingproduction-dva4hmeghfb3a5fz.canadacentral-01.azurewebsites.net/" },
@@ -18,7 +18,7 @@
     "developer": "Artur Kashuba",
     "publisher": "Samurai Swords Store",
     "tags": ["Unity3D", "C#", "API"],
-    "shortDescription": "The application was developed for a company engaged in the production of combat katanas. In the app, users can customize the configuration and order a katana.",
+    "shortDescription": "Swords editor where users can customize the configuration and order a real katana",
     "links": [
       { "name": "Website", "url": "https://samuraiswords.store/" },
       { "name": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.cms.SamuraiSword" },

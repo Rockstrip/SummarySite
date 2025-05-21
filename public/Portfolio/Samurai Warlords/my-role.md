@@ -1,0 +1,5 @@
+- ⚔️ Developed and implemented **multiplayer systems** using Unity’s Netcode, enabling real-time PvP battles and co-op missions.  
+- 🎒 Designed a **synchronized inventory system** that supports item crafting, resource management, and NFT integration.  
+- 🧠 Engineered **core gameplay mechanics** including combat systems, unit formations, and AI behaviors.  
+- 🚀 Optimized game performance across platforms, ensuring seamless gameplay in both single-player and multiplayer modes.  
+- 🛠️ Collaborated with cross-functional teams to integrate blockchain features and enhance user experience.
